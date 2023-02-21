@@ -13,6 +13,9 @@
 		BBBA040D29A4F1B300C3C912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBA040B29A4F1B300C3C912 /* Main.storyboard */; };
 		BBBA040F29A4F1B500C3C912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBBA040E29A4F1B500C3C912 /* Assets.xcassets */; };
 		BBBA041229A4F1B500C3C912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBA041029A4F1B500C3C912 /* LaunchScreen.storyboard */; };
+		BBBA041A29A4F37500C3C912 /* SearchPetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */; };
+		BBBA042629A4F8DF00C3C912 /* PetTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042429A4F8DF00C3C912 /* PetTVC.swift */; };
+		BBBA042729A4F8DF00C3C912 /* PetTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBA042529A4F8DF00C3C912 /* PetTVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		BBBA040E29A4F1B500C3C912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBBA041129A4F1B500C3C912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBBA041329A4F1B500C3C912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPetsViewController.swift; sourceTree = "<group>"; };
+		BBBA042429A4F8DF00C3C912 /* PetTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTVC.swift; sourceTree = "<group>"; };
+		BBBA042529A4F8DF00C3C912 /* PetTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +65,87 @@
 				BBBA040529A4F1B200C3C912 /* AppDelegate.swift */,
 				BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */,
 				BBBA040929A4F1B300C3C912 /* ViewController.swift */,
+				BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */,
+				BBBA041B29A4F6A000C3C912 /* Modules */,
+				BBBA042229A4F8AC00C3C912 /* CustomViews */,
 				BBBA040B29A4F1B300C3C912 /* Main.storyboard */,
 				BBBA040E29A4F1B500C3C912 /* Assets.xcassets */,
 				BBBA041029A4F1B500C3C912 /* LaunchScreen.storyboard */,
 				BBBA041329A4F1B500C3C912 /* Info.plist */,
 			);
 			path = PetFinderProject;
+			sourceTree = "<group>";
+		};
+		BBBA041B29A4F6A000C3C912 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BBBA041C29A4F6B200C3C912 /* PetsList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BBBA041C29A4F6B200C3C912 /* PetsList */ = {
+			isa = PBXGroup;
+			children = (
+				BBBA042129A4F76400C3C912 /* Router */,
+				BBBA042029A4F75B00C3C912 /* Entitiy */,
+				BBBA041F29A4F74D00C3C912 /* Presenter */,
+				BBBA041E29A4F74100C3C912 /* Interactor */,
+				BBBA041D29A4F6BD00C3C912 /* View */,
+			);
+			path = PetsList;
+			sourceTree = "<group>";
+		};
+		BBBA041D29A4F6BD00C3C912 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBBA041E29A4F74100C3C912 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		BBBA041F29A4F74D00C3C912 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BBBA042029A4F75B00C3C912 /* Entitiy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entitiy;
+			sourceTree = "<group>";
+		};
+		BBBA042129A4F76400C3C912 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BBBA042229A4F8AC00C3C912 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				BBBA042329A4F8BD00C3C912 /* PetTVC */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		BBBA042329A4F8BD00C3C912 /* PetTVC */ = {
+			isa = PBXGroup;
+			children = (
+				BBBA042429A4F8DF00C3C912 /* PetTVC.swift */,
+				BBBA042529A4F8DF00C3C912 /* PetTVC.xib */,
+			);
+			path = PetTVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBBA041229A4F1B500C3C912 /* LaunchScreen.storyboard in Resources */,
+				BBBA042729A4F8DF00C3C912 /* PetTVC.xib in Resources */,
 				BBBA040F29A4F1B500C3C912 /* Assets.xcassets in Resources */,
 				BBBA040D29A4F1B300C3C912 /* Main.storyboard in Resources */,
 			);
@@ -140,6 +222,8 @@
 			files = (
 				BBBA040A29A4F1B300C3C912 /* ViewController.swift in Sources */,
 				BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */,
+				BBBA041A29A4F37500C3C912 /* SearchPetsViewController.swift in Sources */,
+				BBBA042629A4F8DF00C3C912 /* PetTVC.swift in Sources */,
 				BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +371,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetFinderProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -294,6 +379,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +400,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetFinderProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -321,6 +408,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
