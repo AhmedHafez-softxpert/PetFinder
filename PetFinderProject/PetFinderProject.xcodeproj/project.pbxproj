@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CCCDBD22ED37235303BE79E /* Pods_PetFinderProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */; };
 		BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040529A4F1B200C3C912 /* AppDelegate.swift */; };
 		BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */; };
 		BBBA040A29A4F1B300C3C912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040929A4F1B300C3C912 /* ViewController.swift */; };
@@ -30,6 +31,9 @@
 		BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPetsViewController.swift; sourceTree = "<group>"; };
 		BBBA042429A4F8DF00C3C912 /* PetTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTVC.swift; sourceTree = "<group>"; };
 		BBBA042529A4F8DF00C3C912 /* PetTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTVC.xib; sourceTree = "<group>"; };
+		BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetFinderProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1CE713725AA842C7D69B91 /* Pods-PetFinderProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFinderProject.debug.xcconfig"; path = "Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject.debug.xcconfig"; sourceTree = "<group>"; };
+		DC60C6F8CFF8917571A6541C /* Pods-PetFinderProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFinderProject.release.xcconfig"; path = "Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCCDBD22ED37235303BE79E /* Pods_PetFinderProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AF6CE704383976B6066776D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE1CE713725AA842C7D69B91 /* Pods-PetFinderProject.debug.xcconfig */,
+				DC60C6F8CFF8917571A6541C /* Pods-PetFinderProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BBBA03F929A4F1B200C3C912 = {
 			isa = PBXGroup;
 			children = (
 				BBBA040429A4F1B200C3C912 /* PetFinderProject */,
 				BBBA040329A4F1B200C3C912 /* Products */,
+				3AF6CE704383976B6066776D /* Pods */,
+				C2E0D68919DCACE8F09AB2E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +165,14 @@
 			path = PetTVC;
 			sourceTree = "<group>";
 		};
+		C2E0D68919DCACE8F09AB2E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBBA041629A4F1B500C3C912 /* Build configuration list for PBXNativeTarget "PetFinderProject" */;
 			buildPhases = (
+				B447C257EE4BC3DC28658C48 /* [CP] Check Pods Manifest.lock */,
 				BBBA03FE29A4F1B200C3C912 /* Sources */,
 				BBBA03FF29A4F1B200C3C912 /* Frameworks */,
 				BBBA040029A4F1B200C3C912 /* Resources */,
+				E6DD89464BBA24CCC2EE0E1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,6 +241,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B447C257EE4BC3DC28658C48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetFinderProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6DD89464BBA24CCC2EE0E1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BBBA03FE29A4F1B200C3C912 /* Sources */ = {
@@ -366,6 +435,7 @@
 		};
 		BBBA041729A4F1B500C3C912 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1CE713725AA842C7D69B91 /* Pods-PetFinderProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -395,6 +465,7 @@
 		};
 		BBBA041829A4F1B500C3C912 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC60C6F8CFF8917571A6541C /* Pods-PetFinderProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
