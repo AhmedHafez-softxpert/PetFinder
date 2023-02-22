@@ -22,8 +22,8 @@ struct AuthModel {
     static var accessToken: String = ""
 }
 
-struct AnimalPhoto: Codable {
-    let small, medium, large, full: String?
+struct AnimalPhoto: JSONDecodable {
+    var small, medium, large, full: String?
     
     init?(json: JSON) {
         self.small = "small" <~~ json
@@ -36,7 +36,7 @@ struct AnimalPhoto: Codable {
 }
 
 
-struct Animal: Codable, JSONDecodable {
+struct Animal: JSONDecodable {
     var description: String?
     var name: String?
     var type: String?
@@ -49,13 +49,13 @@ struct Animal: Codable, JSONDecodable {
         self.name = "name" <~~ json
         self.type = "type" <~~ json
         self.gender = "gender" <~~ json
-        self.photos = "photos" <~~ json
+        self.photos = Decoder.decode(decodableArrayForKey: "photos")(json)
         self.mixed = "breeds.mixed" <~~ json
     }
 }
 
 
-struct AnimalsResponse: Codable {
+struct AnimalsResponse: JSONDecodable {
     let animals: [Animal]?
 //    let pagination: Pagination
     
