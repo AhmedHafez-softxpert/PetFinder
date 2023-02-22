@@ -9,48 +9,70 @@ import UIKit
 import Alamofire
 import Gloss
 
-struct AuthModel: Codable {
-    var token_type: String?
-    var expires_in: Double?
+struct TokenModel: Codable {
     var access_token: String?
     
     init?(json: JSON) {
-        self.token_type = "token_type" <~~ json
-        self.expires_in = "expires_in" <~~ json
         self.access_token = "access_token" <~~ json
-
     }
+    
+}
+
+struct AuthModel {
+    static var accessToken: String = ""
+}
+
+
+struct Animal: Codable {
     
 }
 
 
 class SearchPetsViewController: UIViewController {
-
-    @IBOutlet weak var petsTableView: UITableView!
     
     @IBOutlet weak var petsFilterCollectionView: UICollectionView!
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPetsTable()
 //        getToken()
+        getAnimals()
+        
+        
+        
     }
     
-
-
+//    func getAnimalsNew() async {
+//        
+//        let emptyToken = Helpers.isTokenEmpty()
+//        if emptyToken {
+//            let result = await NetworkManager.getToken()
+//            if result {
+//                // success get token
+//                let result = await NetworkManager.getAnimals()
+//            }
+//        } else {
+//            let result = await NetworkManager.getAnimals()
+//            let statusCode = result.statusCode
+//            switch statusCode {
+//            case 401:
+//                print("getAnimalsNew invalid token result")
+//            case 200:
+//                print("getAnimalsNew status code 200")
+//            default:
+//                print("getAnimalsNew deafult case status code")
+//            }
+//        }
+//        
+//        
+//    }
     
-    func setupPetsTable() {
-        petsTableView.dataSource = self
-        petsTableView.delegate = self
+    func getAnimals() {
+        NetworkManager.getAnimals { success in
+            print("result from vc \(success)")
+        }
     }
-    
-    
-   
-    
-
-    
 
 }
 

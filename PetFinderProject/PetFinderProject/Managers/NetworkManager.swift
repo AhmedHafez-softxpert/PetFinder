@@ -13,7 +13,7 @@ import Gloss
 struct NetworkManager {
     
     
-    static func getToken() {
+    static func getToken(completion: @escaping(_ success: Bool) -> Void) {
         
         let parameters: [String: Any] = [
             "grant_type": "client_credentials",
@@ -21,26 +21,8 @@ struct NetworkManager {
             "client_secret": "\(Constants.secretKey)"
         ]
         
-    
-        
         let authUrl = "https://api.petfinder.com/v2/oauth2/token"
-//        AF.request(authUrl, method: .post, parameters: parameters).response { respone in
-//            print("response will be printed")
-//            debugPrint(respone)
-//            let result  = respone.result
-//            switch result {
-//            case .failure(let error):
-//                print("dailure part get token \(error.localizedDescription)")
-//            case .success(let data):
-//                debugPrint("success part get token \(data)")
-//                let dataString = String(data: data!, encoding: String.Encoding.utf8)
-//                print("data string will be printed \(dataString)")
-////                var test : AuthModel? =
-//
-//
-//            }
-//
-//        }
+
         
         AF.request(authUrl, method: .post, parameters: parameters).responseJSON { response in
             print("response json \( response )")
@@ -49,14 +31,65 @@ struct NetworkManager {
             case .success(let json):
                 print("success part get token \(json)")
                 let newJson = json as? JSON ?? ["": ""]
-                let authModel: AuthModel? = AuthModel(json: newJson)
-                print("autj model will be printed \(authModel)")
+                let tokenModel: TokenModel? = TokenModel(json: newJson)
+                print("autj model will be printed \(tokenModel)")
+                if tokenModel != nil {
+                    AuthModel.accessToken = tokenModel?.access_token ?? ""
+                    completion(true)
+                } else {
+                    completion(false)
+                }
                 
             case .failure(let error):
                 print("failure part get token \(error.localizedDescription)")
+                completion(false)
             }
         }
         
+    }
+    
+    static func getAnimals(completion: @escaping(_ success: Bool) -> Void) {
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(AuthModel.accessToken)",
+
+        ]
+        let url = "https://api.petfinder.com/v2/animals?type=dog&page=2"
+        
+        AF.request(url, method: .get, headers: headers).responseJSON { response in
+            print("response json \( response )")
+            print("getAnimals status code will be printed \(response.response?.statusCode)")
+            let result = response.result
+            switch result {
+            case .success(let json):
+                print("success part getAnimals \(json)")
+                let statusCode = response.response?.statusCode
+                switch statusCode {
+                case 200, 204 :
+                    print("status code is 200")
+                    completion(true)
+                case 401:
+                    print("status code is 401")
+                    NetworkManager.getToken { success in
+                        if success {
+                            getAnimals { success in
+                                completion(success)
+                            }
+                        } else {
+                            completion(false)
+                        }
+                    }
+                default:
+                    print("default case switch ")
+                    completion(false)
+                    
+                }
+                
+                
+            case .failure(let error):
+                print("failure part getAnimals \(error.localizedDescription)")
+                completion(false)
+            }
+        }
     }
     
     
