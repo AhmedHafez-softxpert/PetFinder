@@ -53,7 +53,7 @@ struct NetworkManager {
             "Authorization": "Bearer \(AuthModel.accessToken)",
 
         ]
-        let url = "https://api.petfinder.com/v2/animals?type=dog&page=2"
+        let url = "https://api.petfinder.com/v2/animals?type=cat&page=2"
         
         AF.request(url, method: .get, headers: headers).responseJSON { response in
             print("response json \( response )")
@@ -66,6 +66,10 @@ struct NetworkManager {
                 switch statusCode {
                 case 200, 204 :
                     print("status code is 200")
+                    let newJson = json as? JSON ?? ["": ""]
+                    print("new json value \(newJson)")
+                    let animalsResponse: AnimalsResponse? = AnimalsResponse(json: newJson)
+                    print("animal response will be printed \(animalsResponse)")
                     completion(true)
                 case 401:
                     print("status code is 401")

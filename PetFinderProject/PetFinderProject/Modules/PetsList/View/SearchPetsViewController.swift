@@ -22,9 +22,46 @@ struct AuthModel {
     static var accessToken: String = ""
 }
 
-
-struct Animal: Codable {
+struct AnimalPhoto: Codable {
+    let small, medium, large, full: String?
     
+    init?(json: JSON) {
+        self.small = "small" <~~ json
+        self.medium = "medium" <~~ json
+        self.large = "large" <~~ json
+        self.full = "full" <~~ json
+    }
+    
+    
+}
+
+
+struct Animal: Codable, JSONDecodable {
+    var description: String?
+    var name: String?
+    var type: String?
+    var gender: String?
+    var photos: [AnimalPhoto?]?
+    var mixed: Bool?
+    
+    init?(json: JSON) {
+        self.description = "description" <~~ json
+        self.name = "name" <~~ json
+        self.type = "type" <~~ json
+        self.gender = "gender" <~~ json
+        self.photos = "photos" <~~ json
+        self.mixed = "breeds.mixed" <~~ json
+    }
+}
+
+
+struct AnimalsResponse: Codable {
+    let animals: [Animal]?
+//    let pagination: Pagination
+    
+    init?(json: JSON) {
+        self.animals = "animals" <~~ json
+    }
 }
 
 
