@@ -17,6 +17,8 @@
 		BBBA041A29A4F37500C3C912 /* SearchPetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */; };
 		BBBA042629A4F8DF00C3C912 /* PetTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042429A4F8DF00C3C912 /* PetTVC.swift */; };
 		BBBA042729A4F8DF00C3C912 /* PetTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBA042529A4F8DF00C3C912 /* PetTVC.xib */; };
+		BBBA042929A5107E00C3C912 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042829A5107E00C3C912 /* Constants.swift */; };
+		BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042B29A527CA00C3C912 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPetsViewController.swift; sourceTree = "<group>"; };
 		BBBA042429A4F8DF00C3C912 /* PetTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTVC.swift; sourceTree = "<group>"; };
 		BBBA042529A4F8DF00C3C912 /* PetTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTVC.xib; sourceTree = "<group>"; };
+		BBBA042829A5107E00C3C912 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BBBA042B29A527CA00C3C912 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetFinderProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1CE713725AA842C7D69B91 /* Pods-PetFinderProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFinderProject.debug.xcconfig"; path = "Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject.debug.xcconfig"; sourceTree = "<group>"; };
 		DC60C6F8CFF8917571A6541C /* Pods-PetFinderProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFinderProject.release.xcconfig"; path = "Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,7 +58,6 @@
 				BE1CE713725AA842C7D69B91 /* Pods-PetFinderProject.debug.xcconfig */,
 				DC60C6F8CFF8917571A6541C /* Pods-PetFinderProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,16 +82,17 @@
 		BBBA040429A4F1B200C3C912 /* PetFinderProject */ = {
 			isa = PBXGroup;
 			children = (
+				BBBA042A29A527AF00C3C912 /* Managers */,
 				BBBA040529A4F1B200C3C912 /* AppDelegate.swift */,
 				BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */,
 				BBBA040929A4F1B300C3C912 /* ViewController.swift */,
-				BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */,
 				BBBA041B29A4F6A000C3C912 /* Modules */,
 				BBBA042229A4F8AC00C3C912 /* CustomViews */,
 				BBBA040B29A4F1B300C3C912 /* Main.storyboard */,
 				BBBA040E29A4F1B500C3C912 /* Assets.xcassets */,
 				BBBA041029A4F1B500C3C912 /* LaunchScreen.storyboard */,
 				BBBA041329A4F1B500C3C912 /* Info.plist */,
+				BBBA042829A5107E00C3C912 /* Constants.swift */,
 			);
 			path = PetFinderProject;
 			sourceTree = "<group>";
@@ -116,6 +120,7 @@
 		BBBA041D29A4F6BD00C3C912 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +168,14 @@
 				BBBA042529A4F8DF00C3C912 /* PetTVC.xib */,
 			);
 			path = PetTVC;
+			sourceTree = "<group>";
+		};
+		BBBA042A29A527AF00C3C912 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BBBA042B29A527CA00C3C912 /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C2E0D68919DCACE8F09AB2E3 /* Frameworks */ = {
@@ -292,8 +305,10 @@
 				BBBA040A29A4F1B300C3C912 /* ViewController.swift in Sources */,
 				BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */,
 				BBBA041A29A4F37500C3C912 /* SearchPetsViewController.swift in Sources */,
+				BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */,
 				BBBA042629A4F8DF00C3C912 /* PetTVC.swift in Sources */,
 				BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */,
+				BBBA042929A5107E00C3C912 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,23 @@
 //
 
 import UIKit
+import Alamofire
+import Gloss
+
+struct AuthModel: Codable {
+    var token_type: String?
+    var expires_in: Double?
+    var access_token: String?
+    
+    init?(json: JSON) {
+        self.token_type = "token_type" <~~ json
+        self.expires_in = "expires_in" <~~ json
+        self.access_token = "access_token" <~~ json
+
+    }
+    
+}
+
 
 class SearchPetsViewController: UIViewController {
 
@@ -18,13 +35,19 @@ class SearchPetsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPetsTable()
+//        getToken()
     }
     
+
+
     
     func setupPetsTable() {
         petsTableView.dataSource = self
         petsTableView.delegate = self
     }
+    
+    
+   
     
 
     

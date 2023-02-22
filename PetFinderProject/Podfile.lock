@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.6.4)
+  - Gloss (3.2.1)
 
 DEPENDENCIES:
   - Alamofire
+  - Gloss (~> 3.2)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Gloss
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Gloss: 2cda64dd31f12d8c7905273c7883c63ee92bfee3
 
-PODFILE CHECKSUM: 1ce8ee6f8cc80791dd6f3ad766537e9105ddf1a2
+PODFILE CHECKSUM: 9d1b8776f481c4067ae0e2ad271c64796e2f2623
 
 COCOAPODS: 1.11.3
