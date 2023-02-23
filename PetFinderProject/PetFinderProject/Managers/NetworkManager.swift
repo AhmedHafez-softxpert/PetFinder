@@ -53,7 +53,7 @@ struct NetworkManager {
             "Authorization": "Bearer \(AuthModel.accessToken)",
 
         ]
-        let url = "https://api.petfinder.com/v2/animals?type=cat&page=2"
+        let url = "https://api.petfinder.com/v2/animals?type=dog&page=2"
         
         AF.request(url, method: .get, headers: headers).responseJSON { response in
             print("response json \( response )")

@@ -19,6 +19,9 @@ class SearchPetsViewController: UIViewController {
         super.viewDidLoad()
         presenter = DependencyFactory.shared.getPresenterForSearchPetsVC(vc: self)
         presenter?.onViewDidLoad()
+        NetworkManager.getAnimals { success in
+            print("success get animals vc \(success)")
+        }
         
     }
     
