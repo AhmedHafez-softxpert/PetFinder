@@ -14,7 +14,6 @@ struct NetworkManager {
     
     
     static func getToken(completion: @escaping(_ success: Bool) -> Void) {
-        
         let parameters: [String: Any] = [
             "grant_type": "client_credentials",
             "client_id": "\(Constants.apiKey)",
@@ -22,7 +21,6 @@ struct NetworkManager {
         ]
         
         let authUrl = "https://api.petfinder.com/v2/oauth2/token"
-
         
         AF.request(authUrl, method: .post, parameters: parameters).responseJSON { response in
             print("response json \( response )")
@@ -81,7 +79,6 @@ struct NetworkManager {
             }
         }
     }
-    
     
     static func handleGetAnimalsSuccessCase(json: Any) -> AnimalsResponse? {
         let newJson = json as? JSON ?? ["": ""]

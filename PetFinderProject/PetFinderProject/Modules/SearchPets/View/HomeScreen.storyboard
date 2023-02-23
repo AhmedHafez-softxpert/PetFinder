@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,53 +38,45 @@
                                 <rect key="frame" x="0.0" y="109" width="393" height="60"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Psd-JN-VAc">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                                        <rect key="frame" x="5" y="0.0" width="383" height="60"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XL2-lA-Ad6">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XL2-lA-Ad6">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xCJ-EU-tGM">
-                                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VD1-lC-cNT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
+                                        <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Psd-JN-VAc" firstAttribute="top" secondItem="dPG-9y-ScB" secondAttribute="top" id="GFW-ot-HMc"/>
-                                    <constraint firstAttribute="trailing" secondItem="Psd-JN-VAc" secondAttribute="trailing" id="Llr-50-AeG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Psd-JN-VAc" secondAttribute="trailing" constant="5" id="Llr-50-AeG"/>
                                     <constraint firstAttribute="height" constant="60" id="Zhk-Bo-th7"/>
-                                    <constraint firstItem="Psd-JN-VAc" firstAttribute="leading" secondItem="dPG-9y-ScB" secondAttribute="leading" id="m8g-lM-2LS"/>
+                                    <constraint firstItem="Psd-JN-VAc" firstAttribute="leading" secondItem="dPG-9y-ScB" secondAttribute="leading" constant="5" id="m8g-lM-2LS"/>
                                     <constraint firstAttribute="bottom" secondItem="Psd-JN-VAc" secondAttribute="bottom" id="v0d-Fp-2qm"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dp-Ls-kTq">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh3-r0-T6A">
                                 <rect key="frame" x="0.0" y="169" width="393" height="649"/>
-                                <color key="backgroundColor" systemColor="systemMintColor"/>
-                            </view>
+                                <connections>
+                                    <segue destination="gYN-jp-41H" kind="embed" id="VYe-xy-4j4"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wXs-TW-35b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wXs-TW-35b" firstAttribute="trailing" secondItem="3dp-Ls-kTq" secondAttribute="trailing" id="9Ln-A3-1OD"/>
+                            <constraint firstItem="wXs-TW-35b" firstAttribute="bottom" secondItem="nh3-r0-T6A" secondAttribute="bottom" id="951-dK-Iry"/>
+                            <constraint firstItem="nh3-r0-T6A" firstAttribute="top" secondItem="dPG-9y-ScB" secondAttribute="bottom" id="9kU-SR-uWM"/>
                             <constraint firstItem="z3h-NW-rfm" firstAttribute="top" secondItem="wXs-TW-35b" secondAttribute="top" id="EIA-BS-UDk"/>
-                            <constraint firstItem="wXs-TW-35b" firstAttribute="bottom" secondItem="3dp-Ls-kTq" secondAttribute="bottom" id="JpC-Bh-ltt"/>
                             <constraint firstItem="dPG-9y-ScB" firstAttribute="leading" secondItem="wXs-TW-35b" secondAttribute="leading" id="TFh-j6-2iS"/>
                             <constraint firstItem="z3h-NW-rfm" firstAttribute="leading" secondItem="wXs-TW-35b" secondAttribute="leading" id="UrR-jd-tdh"/>
-                            <constraint firstItem="3dp-Ls-kTq" firstAttribute="top" secondItem="dPG-9y-ScB" secondAttribute="bottom" id="ckn-W6-Xa6"/>
-                            <constraint firstItem="3dp-Ls-kTq" firstAttribute="leading" secondItem="wXs-TW-35b" secondAttribute="leading" id="gSy-9k-dM3"/>
                             <constraint firstItem="wXs-TW-35b" firstAttribute="trailing" secondItem="z3h-NW-rfm" secondAttribute="trailing" id="j3A-Gx-K6k"/>
                             <constraint firstItem="wXs-TW-35b" firstAttribute="trailing" secondItem="dPG-9y-ScB" secondAttribute="trailing" id="m97-6a-fyg"/>
+                            <constraint firstItem="wXs-TW-35b" firstAttribute="trailing" secondItem="nh3-r0-T6A" secondAttribute="trailing" id="mfq-Cf-lgz"/>
                             <constraint firstItem="dPG-9y-ScB" firstAttribute="top" secondItem="z3h-NW-rfm" secondAttribute="bottom" id="rB5-9d-1bB"/>
+                            <constraint firstItem="nh3-r0-T6A" firstAttribute="leading" secondItem="wXs-TW-35b" secondAttribute="leading" id="zEZ-dZ-Hox"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vfg-4J-14a"/>
@@ -96,6 +87,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rg6-XA-BLQ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="959.5419847328244" y="-27.464788732394368"/>
+        </scene>
+        <!--PetsList-->
+        <scene sceneID="nfr-Z7-oX6">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="PetsListViewController" storyboardName="PetsList" id="gYN-jp-41H" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2eP-dJ-kmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dQs-HX-7US">
@@ -118,9 +117,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
