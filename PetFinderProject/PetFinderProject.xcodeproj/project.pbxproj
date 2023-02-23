@@ -10,6 +10,9 @@
 		8CCCDBD22ED37235303BE79E /* Pods_PetFinderProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */; };
 		BB65BD7929A6053C0063C858 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB65BD7829A6053C0063C858 /* HomeScreen.storyboard */; };
 		BB65BD7B29A620670063C858 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7A29A620670063C858 /* Helpers.swift */; };
+		BB65BD7D29A659DF0063C858 /* SearchPetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7C29A659DF0063C858 /* SearchPetsPresenter.swift */; };
+		BB65BD8129A65E2B0063C858 /* FilterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7F29A65E2B0063C858 /* FilterCVC.swift */; };
+		BB65BD8229A65E2B0063C858 /* FilterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB65BD8029A65E2B0063C858 /* FilterCVC.xib */; };
 		BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040529A4F1B200C3C912 /* AppDelegate.swift */; };
 		BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */; };
 		BBBA040A29A4F1B300C3C912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040929A4F1B300C3C912 /* ViewController.swift */; };
@@ -21,11 +24,18 @@
 		BBBA042729A4F8DF00C3C912 /* PetTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBA042529A4F8DF00C3C912 /* PetTVC.xib */; };
 		BBBA042929A5107E00C3C912 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042829A5107E00C3C912 /* Constants.swift */; };
 		BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042B29A527CA00C3C912 /* NetworkManager.swift */; };
+		BBE402E029A6729300BD9779 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402DF29A6729300BD9779 /* TokenModel.swift */; };
+		BBE402E829A6735400BD9779 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402E729A6735400BD9779 /* Animal.swift */; };
+		BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */; };
+		BBE402ED29A6776F00BD9779 /* SearchPetsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402EC29A6776F00BD9779 /* SearchPetsInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BB65BD7829A6053C0063C858 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
 		BB65BD7A29A620670063C858 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		BB65BD7C29A659DF0063C858 /* SearchPetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPetsPresenter.swift; sourceTree = "<group>"; };
+		BB65BD7F29A65E2B0063C858 /* FilterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCVC.swift; sourceTree = "<group>"; };
+		BB65BD8029A65E2B0063C858 /* FilterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCVC.xib; sourceTree = "<group>"; };
 		BBBA040229A4F1B200C3C912 /* PetFinderProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFinderProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBA040529A4F1B200C3C912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +49,10 @@
 		BBBA042529A4F8DF00C3C912 /* PetTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTVC.xib; sourceTree = "<group>"; };
 		BBBA042829A5107E00C3C912 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BBBA042B29A527CA00C3C912 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BBE402DF29A6729300BD9779 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		BBE402E729A6735400BD9779 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
+		BBE402EC29A6776F00BD9779 /* SearchPetsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPetsInteractor.swift; sourceTree = "<group>"; };
 		BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetFinderProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1CE713725AA842C7D69B91 /* Pods-PetFinderProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFinderProject.debug.xcconfig"; path = "Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject.debug.xcconfig"; sourceTree = "<group>"; };
 		DC60C6F8CFF8917571A6541C /* Pods-PetFinderProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFinderProject.release.xcconfig"; path = "Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +79,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BB65BD7E29A65E070063C858 /* FilterCVC */ = {
+			isa = PBXGroup;
+			children = (
+				BB65BD7F29A65E2B0063C858 /* FilterCVC.swift */,
+				BB65BD8029A65E2B0063C858 /* FilterCVC.xib */,
+			);
+			path = FilterCVC;
+			sourceTree = "<group>";
+		};
 		BBBA03F929A4F1B200C3C912 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +109,7 @@
 		BBBA040429A4F1B200C3C912 /* PetFinderProject */ = {
 			isa = PBXGroup;
 			children = (
+				BBE402E929A6766E00BD9779 /* Utilities */,
 				BBBA042A29A527AF00C3C912 /* Managers */,
 				BBBA040529A4F1B200C3C912 /* AppDelegate.swift */,
 				BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */,
@@ -105,21 +129,22 @@
 		BBBA041B29A4F6A000C3C912 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				BBBA041C29A4F6B200C3C912 /* PetsList */,
+				BBBA041C29A4F6B200C3C912 /* SearchPets */,
+				BBE402E129A672E800BD9779 /* PetsList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		BBBA041C29A4F6B200C3C912 /* PetsList */ = {
+		BBBA041C29A4F6B200C3C912 /* SearchPets */ = {
 			isa = PBXGroup;
 			children = (
-				BBBA042129A4F76400C3C912 /* Router */,
-				BBBA042029A4F75B00C3C912 /* Entitiy */,
-				BBBA041F29A4F74D00C3C912 /* Presenter */,
-				BBBA041E29A4F74100C3C912 /* Interactor */,
 				BBBA041D29A4F6BD00C3C912 /* View */,
+				BBBA041F29A4F74D00C3C912 /* Presenter */,
+				BBBA042129A4F76400C3C912 /* Router */,
+				BBBA041E29A4F74100C3C912 /* Interactor */,
+				BBBA042029A4F75B00C3C912 /* Entitiy */,
 			);
-			path = PetsList;
+			path = SearchPets;
 			sourceTree = "<group>";
 		};
 		BBBA041D29A4F6BD00C3C912 /* View */ = {
@@ -134,6 +159,7 @@
 		BBBA041E29A4F74100C3C912 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				BBE402EC29A6776F00BD9779 /* SearchPetsInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -141,6 +167,7 @@
 		BBBA041F29A4F74D00C3C912 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				BB65BD7C29A659DF0063C858 /* SearchPetsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -162,6 +189,7 @@
 		BBBA042229A4F8AC00C3C912 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				BB65BD7E29A65E070063C858 /* FilterCVC */,
 				BBBA042329A4F8BD00C3C912 /* PetTVC */,
 			);
 			path = CustomViews;
@@ -182,6 +210,63 @@
 				BBBA042B29A527CA00C3C912 /* NetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		BBE402E129A672E800BD9779 /* PetsList */ = {
+			isa = PBXGroup;
+			children = (
+				BBE402E229A672FE00BD9779 /* View */,
+				BBE402E429A6730F00BD9779 /* Presenter */,
+				BBE402E329A6730500BD9779 /* Interactor */,
+				BBE402E529A6731600BD9779 /* Router */,
+				BBE402E629A6731F00BD9779 /* Entity */,
+			);
+			path = PetsList;
+			sourceTree = "<group>";
+		};
+		BBE402E229A672FE00BD9779 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBE402E329A6730500BD9779 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		BBE402E429A6730F00BD9779 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BBE402E529A6731600BD9779 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BBE402E629A6731F00BD9779 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				BBE402DF29A6729300BD9779 /* TokenModel.swift */,
+				BBE402E729A6735400BD9779 /* Animal.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		BBE402E929A6766E00BD9779 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		C2E0D68919DCACE8F09AB2E3 /* Frameworks */ = {
@@ -252,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB65BD8229A65E2B0063C858 /* FilterCVC.xib in Resources */,
 				BB65BD7929A6053C0063C858 /* HomeScreen.storyboard in Resources */,
 				BBBA041229A4F1B500C3C912 /* LaunchScreen.storyboard in Resources */,
 				BBBA042729A4F8DF00C3C912 /* PetTVC.xib in Resources */,
@@ -310,13 +396,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBBA040A29A4F1B300C3C912 /* ViewController.swift in Sources */,
+				BBE402E029A6729300BD9779 /* TokenModel.swift in Sources */,
 				BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */,
 				BBBA041A29A4F37500C3C912 /* SearchPetsViewController.swift in Sources */,
 				BB65BD7B29A620670063C858 /* Helpers.swift in Sources */,
+				BBE402E829A6735400BD9779 /* Animal.swift in Sources */,
 				BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */,
 				BBBA042629A4F8DF00C3C912 /* PetTVC.swift in Sources */,
+				BB65BD7D29A659DF0063C858 /* SearchPetsPresenter.swift in Sources */,
 				BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */,
+				BB65BD8129A65E2B0063C858 /* FilterCVC.swift in Sources */,
 				BBBA042929A5107E00C3C912 /* Constants.swift in Sources */,
+				BBE402ED29A6776F00BD9779 /* SearchPetsInteractor.swift in Sources */,
+				BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -446,7 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -464,7 +556,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U54UF82N49;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetFinderProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -472,7 +564,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,7 +586,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U54UF82N49;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetFinderProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -502,7 +594,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
