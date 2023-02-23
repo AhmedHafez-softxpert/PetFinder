@@ -30,7 +30,7 @@ class PetsListPresenter {
     
     func getAnimals() {
         interactor.getAnimals { [weak self] response in
-            print("")
+            print("interactor.getAnimals from presenter")
             self?.view.didFetchAnimals()
         }
     }
