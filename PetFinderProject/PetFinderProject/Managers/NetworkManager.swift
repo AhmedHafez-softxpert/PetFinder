@@ -48,15 +48,13 @@ struct NetworkManager {
         
     }
     
-    static func getAnimals(completion: @escaping(_ success: Bool) -> Void) {
+    static func getAnimals(completion: @escaping(_ response: AnimalsResponse?) -> Void) {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(AuthModel.accessToken)",
-
         ]
         let url = "https://api.petfinder.com/v2/animals?type=dog&page=2"
-        
         AF.request(url, method: .get, headers: headers).responseJSON { response in
-            print("response json \( response )")
+            print("getAnimals response json \( response )")
             print("getAnimals status code will be printed \(response.response?.statusCode)")
             let result = response.result
             switch result {
@@ -65,37 +63,44 @@ struct NetworkManager {
                 let statusCode = response.response?.statusCode
                 switch statusCode {
                 case 200, 204 :
-                    print("status code is 200")
-                    let newJson = json as? JSON ?? ["": ""]
-                    print("new json value \(newJson)")
-                    let animalsResponse: AnimalsResponse? = AnimalsResponse(json: newJson)
-                    print("animal response will be printed \(animalsResponse)")
-                    completion(true)
+                    print("getAnimals status code is 200")
+                    let animalsResponse = handleGetAnimalsSuccessCase(json: json)
+                    completion(animalsResponse)
                 case 401:
-                    print("status code is 401")
-                    NetworkManager.getToken { success in
-                        if success {
-                            getAnimals { success in
-                                completion(success)
-                            }
-                        } else {
-                            completion(false)
-                        }
+                    print("getAnimals status code is 401")
+                    handleExpiredToken { response in
+                        completion(response)
                     }
                 default:
                     print("default case switch ")
-                    completion(false)
-                    
+                    completion(nil)
                 }
-                
-                
             case .failure(let error):
                 print("failure part getAnimals \(error.localizedDescription)")
-                completion(false)
+                completion(nil)
             }
         }
     }
     
     
+    static func handleGetAnimalsSuccessCase(json: Any) -> AnimalsResponse? {
+        let newJson = json as? JSON ?? ["": ""]
+        print("handleGetAnimalsSuccessCase \(newJson)")
+        let animalsResponse: AnimalsResponse? = AnimalsResponse(json: newJson)
+        print("getAnimals animal response will be printed \(animalsResponse)")
+        return animalsResponse
+    }
+    
+    static func handleExpiredToken(completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+        NetworkManager.getToken { success in
+            if success {
+                getAnimals { response in
+                    completion(response)
+                }
+            } else {
+                completion(nil)
+            }
+        }
+    }
     
 }
