@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PetCVC: UICollectionViewCell {
 
@@ -34,6 +35,11 @@ class PetCVC: UICollectionViewCell {
     
     
     func configure(model: AnimalViewModel) {
+        petImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        petImageView.sd_setImage(with: URL(string: model.firstSmallPhotoUrl), placeholderImage: UIImage(named: "waitImage"))
+        petNameLabel.text = model.name
+        petTypeLabel.text = model.type
+        petGenderLabel.text = model.gender
         
     }
 

@@ -9,7 +9,7 @@ import Foundation
 
 protocol PetsListPresenterToView: AnyObject {
     func initUISetup()
-    func didFetchAnimals()
+    func didFetchAnimals(animals: [AnimalViewModel])
 }
 
 class PetsListPresenter {
@@ -30,13 +30,16 @@ class PetsListPresenter {
     
     func getAnimals() {
         interactor.getAnimals { [weak self] response in
+            guard let self = self else {return}
             print("interactor.getAnimals from presenter")
-            self?.view.didFetchAnimals()
+            let animals = self.handleAnimalResponse(response: response)
+            self.view.didFetchAnimals(animals: animals)
         }
     }
     
     func handleAnimalResponse(response: AnimalsResponse?) -> [AnimalViewModel] {
         var petsArr: [AnimalViewModel] = []
+        print("handleAnimalResponse init arr \(petsArr)")
         guard response != nil else {return petsArr}
         let animals = response?.animals ?? []
         for animal in animals {
@@ -54,7 +57,7 @@ class PetsListPresenter {
         let address = animal.contact?.address
         let addressDetails = (address?.city ?? "") + (address?.state ?? "") + (address?.country ?? "")
         
-        let animalViewModel = AnimalViewModel(name: animal.name ?? "NA", size: animal.size ?? "NA", type: animal.type ?? "NA", firstSmallPhotoUrl: firstSmallPhoto, firstMediumPhotoUrl: firstMediumPhoto, primaryColor: animal.primaryColor ?? "NA", address: addressDetails, url: animal.url ?? "")
+        let animalViewModel = AnimalViewModel(name: animal.name ?? "NA", size: animal.size ?? "NA", type: animal.type ?? "NA", gender: animal.gender ?? "", firstSmallPhotoUrl: firstSmallPhoto, firstMediumPhotoUrl: firstMediumPhoto, primaryColor: animal.primaryColor ?? "NA", address: addressDetails, url: animal.url ?? "")
         
         return animalViewModel
     }

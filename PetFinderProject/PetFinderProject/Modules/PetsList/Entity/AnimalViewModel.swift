@@ -13,6 +13,7 @@ struct AnimalViewModel {
     var name: String
     var size: String
     var type: String
+    var gender: String
     var firstSmallPhotoUrl: String
     var firstMediumPhotoUrl: String
     var primaryColor: String
