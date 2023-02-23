@@ -8,4 +8,5 @@ target 'PetFinderProject' do
   # Pods for PetFinderProject
 pod 'Alamofire'
 pod 'Gloss', '~> 3.2'
+pod 'SDWebImage', '~> 5.0'
 end
