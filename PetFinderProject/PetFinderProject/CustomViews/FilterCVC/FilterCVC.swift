@@ -15,4 +15,8 @@ class FilterCVC: UICollectionViewCell {
         // Initialization code
     }
 
+    
+    func configure(filter: String) {
+        filterLabel.text = filter
+    }
 }

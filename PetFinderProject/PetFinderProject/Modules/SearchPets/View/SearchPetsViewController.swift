@@ -13,6 +13,7 @@ class SearchPetsViewController: UIViewController {
     
     
     var presenter: SearchPetsPresenter?
+    let filters: [String] = ["All", "Cat", "Horse", "Bird", "Rabbit"]
 
     
     override func viewDidLoad() {
@@ -25,37 +26,6 @@ class SearchPetsViewController: UIViewController {
         
     }
     
-    //MARK: -
-    //MARK: - private helpers
-
-//    private func setupPresenter() {
-//        presenter?.view = self
-//    }
-    
-//    func getAnimalsNew() async {
-//        
-//        let emptyToken = Helpers.isTokenEmpty()
-//        if emptyToken {
-//            let result = await NetworkManager.getToken()
-//            if result {
-//                // success get token
-//                let result = await NetworkManager.getAnimals()
-//            }
-//        } else {
-//            let result = await NetworkManager.getAnimals()
-//            let statusCode = result.statusCode
-//            switch statusCode {
-//            case 401:
-//                print("getAnimalsNew invalid token result")
-//            case 200:
-//                print("getAnimalsNew status code 200")
-//            default:
-//                print("getAnimalsNew deafult case status code")
-//            }
-//        }
-//        
-//        
-//    }
     
     func getAnimals() {
         NetworkManager.getAnimals { success in
@@ -76,12 +46,13 @@ class SearchPetsViewController: UIViewController {
 //MARK: -> collection view methods
 extension SearchPetsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        filters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCVC", for: indexPath) as! FilterCVC
-        cell.filterLabel.text = "\(indexPath.item)"
+        let filter = filters[indexPath.row]
+        cell.configure(filter: filter)
         return cell
     }
     

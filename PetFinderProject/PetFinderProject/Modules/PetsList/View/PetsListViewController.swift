@@ -27,9 +27,7 @@ class PetsListViewController: UIViewController {
         petsCollectionView.delegate = self
         petsCollectionView.register(UINib(nibName: "PetCVC", bundle: nil), forCellWithReuseIdentifier: "PetCVC")
     }
-    
-
-   
+       
 
 }
 
