@@ -17,8 +17,8 @@ class PetsListViewController: UIViewController {
         super.viewDidLoad()
         presenter = DependencyFactory.shared.getPresenterForPetsListVC(vc: self)
         presenter?.onViewDidLoad()
-        
     }
+    
     
     func setupPetsCollectionView() {
         petsCollectionView.dataSource = self
@@ -45,6 +45,8 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
         
         return cell
     }
+    
+    
     
     
     

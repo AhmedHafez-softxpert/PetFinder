@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8CCCDBD22ED37235303BE79E /* Pods_PetFinderProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */; };
+		BB31A3F429A7A22C006FA3E4 /* AnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31A3F329A7A22B006FA3E4 /* AnimalViewModel.swift */; };
 		BB65BD7929A6053C0063C858 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB65BD7829A6053C0063C858 /* HomeScreen.storyboard */; };
 		BB65BD7B29A620670063C858 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7A29A620670063C858 /* Helpers.swift */; };
 		BB65BD7D29A659DF0063C858 /* SearchPetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7C29A659DF0063C858 /* SearchPetsPresenter.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB31A3F329A7A22B006FA3E4 /* AnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewModel.swift; sourceTree = "<group>"; };
 		BB65BD7829A6053C0063C858 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
 		BB65BD7A29A620670063C858 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		BB65BD7C29A659DF0063C858 /* SearchPetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPetsPresenter.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			children = (
 				BBE402DF29A6729300BD9779 /* TokenModel.swift */,
 				BBE402E729A6735400BD9779 /* Animal.swift */,
+				BB31A3F329A7A22B006FA3E4 /* AnimalViewModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				BBBA042929A5107E00C3C912 /* Constants.swift in Sources */,
 				BBE402ED29A6776F00BD9779 /* SearchPetsInteractor.swift in Sources */,
 				BB8712C929A784C400A339B1 /* PetsListRouter.swift in Sources */,
+				BB31A3F429A7A22C006FA3E4 /* AnimalViewModel.swift in Sources */,
 				BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
