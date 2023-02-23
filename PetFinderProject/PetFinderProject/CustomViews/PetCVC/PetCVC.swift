@@ -17,17 +17,24 @@ class PetCVC: UICollectionViewCell {
     
     
     var maxWidth: CGFloat? {
-            didSet {
-                guard let maxWidth = maxWidth else {
-                    return
-                }
-                containerViewWidthAnchor.constant = maxWidth
-                containerViewWidthAnchor.isActive = true
+        didSet {
+            guard let maxWidth = maxWidth else {
+                return
             }
+            containerViewWidthAnchor.constant = maxWidth
+            containerViewWidthAnchor.isActive = true
         }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
        
+    }
+    
+    
+    func configure(model: AnimalViewModel) {
+        
     }
 
 }
