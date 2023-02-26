@@ -19,8 +19,6 @@ class PetsListPresenter {
         self.interactor = interactor
     }
     
-   
-    
     private func getAnimals() {
         interactor.getAnimals { [weak self] response in
             guard let self = self else {return}

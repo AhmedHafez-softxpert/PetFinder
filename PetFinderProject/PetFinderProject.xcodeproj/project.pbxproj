@@ -28,8 +28,6 @@
 		BBBA040F29A4F1B500C3C912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBBA040E29A4F1B500C3C912 /* Assets.xcassets */; };
 		BBBA041229A4F1B500C3C912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBA041029A4F1B500C3C912 /* LaunchScreen.storyboard */; };
 		BBBA041A29A4F37500C3C912 /* PetsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA041929A4F37500C3C912 /* PetsFilterViewController.swift */; };
-		BBBA042629A4F8DF00C3C912 /* PetTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042429A4F8DF00C3C912 /* PetTVC.swift */; };
-		BBBA042729A4F8DF00C3C912 /* PetTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBA042529A4F8DF00C3C912 /* PetTVC.xib */; };
 		BBBA042929A5107E00C3C912 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042829A5107E00C3C912 /* Constants.swift */; };
 		BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042B29A527CA00C3C912 /* NetworkManager.swift */; };
 		BBE402E029A6729300BD9779 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402DF29A6729300BD9779 /* TokenModel.swift */; };
@@ -61,8 +59,6 @@
 		BBBA041129A4F1B500C3C912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBBA041329A4F1B500C3C912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBBA041929A4F37500C3C912 /* PetsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsFilterViewController.swift; sourceTree = "<group>"; };
-		BBBA042429A4F8DF00C3C912 /* PetTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTVC.swift; sourceTree = "<group>"; };
-		BBBA042529A4F8DF00C3C912 /* PetTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTVC.xib; sourceTree = "<group>"; };
 		BBBA042829A5107E00C3C912 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BBBA042B29A527CA00C3C912 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BBE402DF29A6729300BD9779 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
@@ -216,18 +212,8 @@
 			children = (
 				BB8712CA29A78F7D00A339B1 /* PetCVC */,
 				BB65BD7E29A65E070063C858 /* FilterCVC */,
-				BBBA042329A4F8BD00C3C912 /* PetTVC */,
 			);
 			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		BBBA042329A4F8BD00C3C912 /* PetTVC */ = {
-			isa = PBXGroup;
-			children = (
-				BBBA042429A4F8DF00C3C912 /* PetTVC.swift */,
-				BBBA042529A4F8DF00C3C912 /* PetTVC.xib */,
-			);
-			path = PetTVC;
 			sourceTree = "<group>";
 		};
 		BBBA042A29A527AF00C3C912 /* Managers */ = {
@@ -374,7 +360,6 @@
 				BB65BD8229A65E2B0063C858 /* FilterCVC.xib in Resources */,
 				BB65BD7929A6053C0063C858 /* HomeScreen.storyboard in Resources */,
 				BBBA041229A4F1B500C3C912 /* LaunchScreen.storyboard in Resources */,
-				BBBA042729A4F8DF00C3C912 /* PetTVC.xib in Resources */,
 				BBBA040F29A4F1B500C3C912 /* Assets.xcassets in Resources */,
 				BBBA040D29A4F1B300C3C912 /* Main.storyboard in Resources */,
 			);
@@ -439,7 +424,6 @@
 				BB8712C329A77F8C00A339B1 /* PetsListInteractor.swift in Sources */,
 				BBE402E829A6735400BD9779 /* Animal.swift in Sources */,
 				BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */,
-				BBBA042629A4F8DF00C3C912 /* PetTVC.swift in Sources */,
 				BB65BD7D29A659DF0063C858 /* PetsFilterPresenter.swift in Sources */,
 				BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */,
 				BB8712CD29A78FA600A339B1 /* PetCVC.swift in Sources */,
