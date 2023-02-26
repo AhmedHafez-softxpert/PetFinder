@@ -24,7 +24,7 @@ class PetsListPresenter {
             guard let self = self else {return}
             print("interactor.getAnimals from presenter")
             let animalsViewModel = AnimalsViewModel(from: response)
-            self.view.updateDataSource(animalsViewModel: animalsViewModel)
+            self.view.updateAnimalsDataSource(animalsViewModel: animalsViewModel)
             self.view.reloadData()
         }
     }
@@ -35,6 +35,14 @@ class PetsListPresenter {
 //MARK: -> PetsListOutput
 
 extension PetsListPresenter: PetsListOutput {
+    
+    func didAddNewFilter(filter: String) {
+        print("filter from presenter class \(filter)")
+        view.showLoadingView()
+        view.clearAnimalsDataSource()
+        getAnimals()
+    }
+    
     func viewDidLoad() {
         view.setupUI()
         getAnimals()

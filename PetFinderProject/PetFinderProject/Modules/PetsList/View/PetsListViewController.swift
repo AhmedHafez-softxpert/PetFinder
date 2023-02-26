@@ -11,27 +11,34 @@ class PetsListViewController: UIViewController {
 
     @IBOutlet weak var petsCollectionView: UICollectionView!
     
-    var presenter: PetsListPresenter?
+    private var presenter: PetsListOutput?
     var pets: [AnimalViewModel] = []
 
     var selectedFilter: String = "" {
         didSet {
             print("didSet selectedFilter \(selectedFilter)")
+            presenter?.didAddNewFilter(filter: selectedFilter)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = DependencyFactory.shared.getPresenterForPetsListVC(vc: self)
+        initPresenter()
         presenter?.viewDidLoad()
+    }
+    
+    func initPresenter() {
+        presenter = DependencyFactory.shared.getPresenterForPetsListVC(vc: self)
     }
     
     
     func setupPetsCollectionView() {
         petsCollectionView.dataSource = self
         petsCollectionView.delegate = self
-        petsCollectionView.register(UINib(nibName: "PetCVC", bundle: nil), forCellWithReuseIdentifier: "PetCVC")
+        petsCollectionView.register(UINib(nibName: "PetCell", bundle: nil), forCellWithReuseIdentifier: "PetCell")
     }
+    
+    
     
 }
 
@@ -62,19 +69,34 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
 
 //MARK: -> PetsListPresenterToView
 extension PetsListViewController: PetsListInput {
+    
+    
    
     func setupUI() {
         print("initUISetup called from vc")
         setupPetsCollectionView()
     }
     
-    func updateDataSource(animalsViewModel: AnimalsViewModel?) {
+    func updateAnimalsDataSource(animalsViewModel: AnimalsViewModel?) {
         pets.append(contentsOf: animalsViewModel?.animals ?? [])
     }
     
     func reloadData() {
         petsCollectionView.reloadData()
     }
+    
+    func getSelectedFilter() -> String {
+        return selectedFilter
+    }
+    
+    func clearAnimalsDataSource() {
+        pets = []
+    }
+    
+    func showLoadingView() {
+        print("show loading called from PetsListViewController")
+    }
+
     
     
     
@@ -87,12 +109,16 @@ extension PetsListViewController: PetsListInput {
 protocol PetsListOutput: AnyObject {
     func viewDidLoad()
     func viewWillAppear()
+    func didAddNewFilter(filter: String)
 }
 
 protocol PetsListInput: AnyObject {
     func setupUI()
-    func updateDataSource(animalsViewModel: AnimalsViewModel?)
+    func updateAnimalsDataSource(animalsViewModel: AnimalsViewModel?)
     func reloadData()
+    func getSelectedFilter() -> String
+    func clearAnimalsDataSource()
+    func showLoadingView()
 }
 
 
