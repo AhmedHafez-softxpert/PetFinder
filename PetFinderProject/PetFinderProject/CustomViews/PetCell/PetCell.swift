@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class PetCVC: UICollectionViewCell {
+class PetCell: UICollectionViewCell {
 
     @IBOutlet weak var containerViewWidthAnchor: NSLayoutConstraint!
     @IBOutlet weak var petImageView: UIImageView!

@@ -43,7 +43,7 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCVC", for: indexPath) as! PetCVC
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as! PetCell
         cell.maxWidth = collectionView.frame.width
         let petModel = pets[indexPath.item]
         cell.configure(model: petModel)

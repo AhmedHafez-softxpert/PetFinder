@@ -12,15 +12,15 @@
 		BB65BD7929A6053C0063C858 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB65BD7829A6053C0063C858 /* HomeScreen.storyboard */; };
 		BB65BD7B29A620670063C858 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7A29A620670063C858 /* Helpers.swift */; };
 		BB65BD7D29A659DF0063C858 /* PetsFilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7C29A659DF0063C858 /* PetsFilterPresenter.swift */; };
-		BB65BD8129A65E2B0063C858 /* FilterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7F29A65E2B0063C858 /* FilterCVC.swift */; };
-		BB65BD8229A65E2B0063C858 /* FilterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB65BD8029A65E2B0063C858 /* FilterCVC.xib */; };
+		BB65BD8129A65E2B0063C858 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7F29A65E2B0063C858 /* FilterCell.swift */; };
+		BB65BD8229A65E2B0063C858 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB65BD8029A65E2B0063C858 /* FilterCell.xib */; };
 		BB8712C129A77F7B00A339B1 /* PetsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712C029A77F7B00A339B1 /* PetsListPresenter.swift */; };
 		BB8712C329A77F8C00A339B1 /* PetsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712C229A77F8C00A339B1 /* PetsListInteractor.swift */; };
 		BB8712C529A7801700A339B1 /* PetsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8712C429A7801700A339B1 /* PetsList.storyboard */; };
 		BB8712C729A7809500A339B1 /* PetsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712C629A7809500A339B1 /* PetsListViewController.swift */; };
 		BB8712C929A784C400A339B1 /* PetsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712C829A784C400A339B1 /* PetsListRouter.swift */; };
-		BB8712CD29A78FA600A339B1 /* PetCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712CB29A78FA600A339B1 /* PetCVC.swift */; };
-		BB8712CE29A78FA600A339B1 /* PetCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8712CC29A78FA600A339B1 /* PetCVC.xib */; };
+		BB8712CD29A78FA600A339B1 /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712CB29A78FA600A339B1 /* PetCell.swift */; };
+		BB8712CE29A78FA600A339B1 /* PetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8712CC29A78FA600A339B1 /* PetCell.xib */; };
 		BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040529A4F1B200C3C912 /* AppDelegate.swift */; };
 		BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */; };
 		BBBA040A29A4F1B300C3C912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040929A4F1B300C3C912 /* ViewController.swift */; };
@@ -41,15 +41,15 @@
 		BB65BD7829A6053C0063C858 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
 		BB65BD7A29A620670063C858 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		BB65BD7C29A659DF0063C858 /* PetsFilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsFilterPresenter.swift; sourceTree = "<group>"; };
-		BB65BD7F29A65E2B0063C858 /* FilterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCVC.swift; sourceTree = "<group>"; };
-		BB65BD8029A65E2B0063C858 /* FilterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCVC.xib; sourceTree = "<group>"; };
+		BB65BD7F29A65E2B0063C858 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		BB65BD8029A65E2B0063C858 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		BB8712C029A77F7B00A339B1 /* PetsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsListPresenter.swift; sourceTree = "<group>"; };
 		BB8712C229A77F8C00A339B1 /* PetsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsListInteractor.swift; sourceTree = "<group>"; };
 		BB8712C429A7801700A339B1 /* PetsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetsList.storyboard; sourceTree = "<group>"; };
 		BB8712C629A7809500A339B1 /* PetsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsListViewController.swift; sourceTree = "<group>"; };
 		BB8712C829A784C400A339B1 /* PetsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsListRouter.swift; sourceTree = "<group>"; };
-		BB8712CB29A78FA600A339B1 /* PetCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCVC.swift; sourceTree = "<group>"; };
-		BB8712CC29A78FA600A339B1 /* PetCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetCVC.xib; sourceTree = "<group>"; };
+		BB8712CB29A78FA600A339B1 /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
+		BB8712CC29A78FA600A339B1 /* PetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetCell.xib; sourceTree = "<group>"; };
 		BBBA040229A4F1B200C3C912 /* PetFinderProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFinderProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBA040529A4F1B200C3C912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,22 +91,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BB65BD7E29A65E070063C858 /* FilterCVC */ = {
+		BB65BD7E29A65E070063C858 /* FilterCell */ = {
 			isa = PBXGroup;
 			children = (
-				BB65BD7F29A65E2B0063C858 /* FilterCVC.swift */,
-				BB65BD8029A65E2B0063C858 /* FilterCVC.xib */,
+				BB65BD7F29A65E2B0063C858 /* FilterCell.swift */,
+				BB65BD8029A65E2B0063C858 /* FilterCell.xib */,
 			);
-			path = FilterCVC;
+			path = FilterCell;
 			sourceTree = "<group>";
 		};
-		BB8712CA29A78F7D00A339B1 /* PetCVC */ = {
+		BB8712CA29A78F7D00A339B1 /* PetCell */ = {
 			isa = PBXGroup;
 			children = (
-				BB8712CB29A78FA600A339B1 /* PetCVC.swift */,
-				BB8712CC29A78FA600A339B1 /* PetCVC.xib */,
+				BB8712CB29A78FA600A339B1 /* PetCell.swift */,
+				BB8712CC29A78FA600A339B1 /* PetCell.xib */,
 			);
-			path = PetCVC;
+			path = PetCell;
 			sourceTree = "<group>";
 		};
 		BBBA03F929A4F1B200C3C912 = {
@@ -210,8 +210,8 @@
 		BBBA042229A4F8AC00C3C912 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				BB8712CA29A78F7D00A339B1 /* PetCVC */,
-				BB65BD7E29A65E070063C858 /* FilterCVC */,
+				BB8712CA29A78F7D00A339B1 /* PetCell */,
+				BB65BD7E29A65E070063C858 /* FilterCell */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -355,9 +355,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB8712CE29A78FA600A339B1 /* PetCVC.xib in Resources */,
+				BB8712CE29A78FA600A339B1 /* PetCell.xib in Resources */,
 				BB8712C529A7801700A339B1 /* PetsList.storyboard in Resources */,
-				BB65BD8229A65E2B0063C858 /* FilterCVC.xib in Resources */,
+				BB65BD8229A65E2B0063C858 /* FilterCell.xib in Resources */,
 				BB65BD7929A6053C0063C858 /* HomeScreen.storyboard in Resources */,
 				BBBA041229A4F1B500C3C912 /* LaunchScreen.storyboard in Resources */,
 				BBBA040F29A4F1B500C3C912 /* Assets.xcassets in Resources */,
@@ -426,8 +426,8 @@
 				BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */,
 				BB65BD7D29A659DF0063C858 /* PetsFilterPresenter.swift in Sources */,
 				BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */,
-				BB8712CD29A78FA600A339B1 /* PetCVC.swift in Sources */,
-				BB65BD8129A65E2B0063C858 /* FilterCVC.swift in Sources */,
+				BB8712CD29A78FA600A339B1 /* PetCell.swift in Sources */,
+				BB65BD8129A65E2B0063C858 /* FilterCell.swift in Sources */,
 				BBBA042929A5107E00C3C912 /* Constants.swift in Sources */,
 				BBE402ED29A6776F00BD9779 /* PetsFilterInteractor.swift in Sources */,
 				BB8712C929A784C400A339B1 /* PetsListRouter.swift in Sources */,
