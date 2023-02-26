@@ -23,7 +23,7 @@ class PetsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = DependencyFactory.shared.getPresenterForPetsListVC(vc: self)
-        presenter?.onViewDidLoad()
+        presenter?.viewDidLoad()
     }
     
     
@@ -63,7 +63,7 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
 //MARK: -> PetsListPresenterToView
 extension PetsListViewController: PetsListInput {
    
-    func initUISetup() {
+    func setupUI() {
         print("initUISetup called from vc")
         setupPetsCollectionView()
     }
@@ -85,12 +85,12 @@ extension PetsListViewController: PetsListInput {
 //MARK: - Viper protocols
 
 protocol PetsListOutput: AnyObject {
-    func onViewDidLoad()
-    func onViewWillAppear()
+    func viewDidLoad()
+    func viewWillAppear()
 }
 
 protocol PetsListInput: AnyObject {
-    func initUISetup()
+    func setupUI()
     func updateDataSource(animalsViewModel: AnimalsViewModel?)
     func reloadData()
 }

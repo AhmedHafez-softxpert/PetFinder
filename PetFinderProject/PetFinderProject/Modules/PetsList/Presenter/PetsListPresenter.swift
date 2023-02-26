@@ -63,12 +63,12 @@ class PetsListPresenter {
 //MARK: -> PetsListOutput
 
 extension PetsListPresenter: PetsListOutput {
-    func onViewDidLoad() {
-        view.initUISetup()
+    func viewDidLoad() {
+        view.setupUI()
         getAnimals()
     }
     
-    func onViewWillAppear() {
+    func viewWillAppear() {
         print("onViewWillAppear called from presenter")
     }
 }
