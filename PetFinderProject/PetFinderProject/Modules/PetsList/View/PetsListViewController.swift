@@ -52,6 +52,8 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as! PetCell
         cell.maxWidth = collectionView.frame.width
+        print("pets will be printed \(self.pets)")
+        print("indexPath.item will be printed \(indexPath.item)")
         let petModel = pets[indexPath.item]
         cell.configure(model: petModel)
         
@@ -63,12 +65,19 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
         
     }
     
+    
+    
 
     
 }
 
 //MARK: -> PetsListPresenterToView
 extension PetsListViewController: PetsListInput {
+    func hideLoadingView() {
+        let parent = self.parent as! PetsFilterViewController
+        parent.hideLoadingView()
+    }
+    
     
     
    
@@ -83,6 +92,7 @@ extension PetsListViewController: PetsListInput {
     
     func reloadData() {
         petsCollectionView.reloadData()
+        
     }
     
     func getSelectedFilter() -> String {
@@ -95,6 +105,9 @@ extension PetsListViewController: PetsListInput {
     
     func showLoadingView() {
         print("show loading called from PetsListViewController")
+        let parent = self.parent as! PetsFilterViewController
+        parent.showLoadingView()
+        
     }
 
     
@@ -119,6 +132,7 @@ protocol PetsListInput: AnyObject {
     func getSelectedFilter() -> String
     func clearAnimalsDataSource()
     func showLoadingView()
+    func hideLoadingView()
 }
 
 

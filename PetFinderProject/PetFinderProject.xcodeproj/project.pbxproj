@@ -91,6 +91,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BB1AF8B429AB915C0003BEAE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		BB65BD7E29A65E070063C858 /* FilterCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +217,7 @@
 		BBBA042229A4F8AC00C3C912 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				BB1AF8B429AB915C0003BEAE /* New Group */,
 				BB8712CA29A78F7D00A339B1 /* PetCell */,
 				BB65BD7E29A65E070063C858 /* FilterCell */,
 			);

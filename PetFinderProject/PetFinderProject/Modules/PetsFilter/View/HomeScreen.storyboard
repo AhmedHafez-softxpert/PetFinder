@@ -63,6 +63,23 @@
                                     <segue destination="gYN-jp-41H" kind="embed" identifier="PetsFilterViewController" id="VYe-xy-4j4"/>
                                 </connections>
                             </containerView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAU-xl-J2C">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="c3B-Ta-rxe">
+                                        <rect key="frame" x="171.66666666666666" y="401" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="D9C-dv-2kJ"/>
+                                            <constraint firstAttribute="height" constant="50" id="euk-Y3-jRg"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.31432771998525455" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="c3B-Ta-rxe" firstAttribute="centerY" secondItem="bAU-xl-J2C" secondAttribute="centerY" id="c1B-F3-3lN"/>
+                                    <constraint firstItem="c3B-Ta-rxe" firstAttribute="centerX" secondItem="bAU-xl-J2C" secondAttribute="centerX" id="wr0-rL-pa0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wXs-TW-35b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -70,17 +87,22 @@
                             <constraint firstItem="wXs-TW-35b" firstAttribute="bottom" secondItem="nh3-r0-T6A" secondAttribute="bottom" id="951-dK-Iry"/>
                             <constraint firstItem="nh3-r0-T6A" firstAttribute="top" secondItem="dPG-9y-ScB" secondAttribute="bottom" id="9kU-SR-uWM"/>
                             <constraint firstItem="z3h-NW-rfm" firstAttribute="top" secondItem="wXs-TW-35b" secondAttribute="top" id="EIA-BS-UDk"/>
+                            <constraint firstAttribute="bottom" secondItem="bAU-xl-J2C" secondAttribute="bottom" id="EP3-bf-GFT"/>
+                            <constraint firstItem="bAU-xl-J2C" firstAttribute="leading" secondItem="wXs-TW-35b" secondAttribute="leading" id="Jjd-uP-DJO"/>
                             <constraint firstItem="dPG-9y-ScB" firstAttribute="leading" secondItem="wXs-TW-35b" secondAttribute="leading" id="TFh-j6-2iS"/>
                             <constraint firstItem="z3h-NW-rfm" firstAttribute="leading" secondItem="wXs-TW-35b" secondAttribute="leading" id="UrR-jd-tdh"/>
+                            <constraint firstItem="wXs-TW-35b" firstAttribute="trailing" secondItem="bAU-xl-J2C" secondAttribute="trailing" id="bat-cj-bEd"/>
                             <constraint firstItem="wXs-TW-35b" firstAttribute="trailing" secondItem="z3h-NW-rfm" secondAttribute="trailing" id="j3A-Gx-K6k"/>
                             <constraint firstItem="wXs-TW-35b" firstAttribute="trailing" secondItem="dPG-9y-ScB" secondAttribute="trailing" id="m97-6a-fyg"/>
                             <constraint firstItem="wXs-TW-35b" firstAttribute="trailing" secondItem="nh3-r0-T6A" secondAttribute="trailing" id="mfq-Cf-lgz"/>
+                            <constraint firstItem="bAU-xl-J2C" firstAttribute="top" secondItem="ZAI-Un-ioO" secondAttribute="top" id="pDB-4M-uHW"/>
                             <constraint firstItem="dPG-9y-ScB" firstAttribute="top" secondItem="z3h-NW-rfm" secondAttribute="bottom" id="rB5-9d-1bB"/>
                             <constraint firstItem="nh3-r0-T6A" firstAttribute="leading" secondItem="wXs-TW-35b" secondAttribute="leading" id="zEZ-dZ-Hox"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vfg-4J-14a"/>
                     <connections>
+                        <outlet property="loadingView" destination="bAU-xl-J2C" id="5j9-Ba-Ihp"/>
                         <outlet property="petsFilterCollectionView" destination="Psd-JN-VAc" id="AAT-sv-bq5"/>
                     </connections>
                 </viewController>

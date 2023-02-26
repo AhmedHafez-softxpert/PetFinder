@@ -26,6 +26,7 @@ class PetsListPresenter {
             let animalsViewModel = AnimalsViewModel(from: response)
             self.view.updateAnimalsDataSource(animalsViewModel: animalsViewModel)
             self.view.reloadData()
+            self.view.hideLoadingView()
         }
     }
     

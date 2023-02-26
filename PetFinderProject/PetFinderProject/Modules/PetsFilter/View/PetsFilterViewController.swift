@@ -9,6 +9,7 @@ import UIKit
 
 class PetsFilterViewController: UIViewController {
     
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var petsFilterCollectionView: UICollectionView!
     
     var presenter: PetsFilterPresenter?
@@ -46,6 +47,14 @@ class PetsFilterViewController: UIViewController {
         petsFilterCollectionView.delegate = self
         petsFilterCollectionView.register(UINib(nibName: "FilterCell", bundle: nil), forCellWithReuseIdentifier: "FilterCell")
         
+    }
+    
+    func showLoadingView() {
+        loadingView.isHidden = false
+    }
+    
+    func hideLoadingView() {
+        loadingView.isHidden = true
     }
 
 }
