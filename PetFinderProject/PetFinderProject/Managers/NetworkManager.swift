@@ -46,11 +46,11 @@ struct NetworkManager {
         
     }
     
-    static func getAnimals(completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+    static func getAnimals(url: String, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(AuthModel.accessToken)",
         ]
-        let url = "https://api.petfinder.com/v2/animals?type=Horse"
+//        let url = "https://api.petfinder.com/v2/animals?type=Horse"
         AF.request(url, method: .get, headers: headers).responseJSON { response in
             print("getAnimals response json \( response )")
             print("getAnimals status code will be printed \(response.response?.statusCode)")
@@ -66,7 +66,7 @@ struct NetworkManager {
                     completion(animalsResponse)
                 case 401:
                     print("getAnimals status code is 401")
-                    handleExpiredToken { response in
+                    handleExpiredToken(url: url) { response in
                         completion(response)
                     }
                 default:
@@ -88,10 +88,10 @@ struct NetworkManager {
         return animalsResponse
     }
     
-    static func handleExpiredToken(completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+    static func handleExpiredToken(url: String, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
         NetworkManager.getToken { success in
             if success {
-                getAnimals { response in
+                getAnimals(url: url) { response in
                     completion(response)
                 }
             } else {

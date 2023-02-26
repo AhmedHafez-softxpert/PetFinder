@@ -16,10 +16,10 @@ class PetsListInteractor {
     var fetchLimit = 20
     
     
-    func getAnimals(completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+    func getAnimals(url: String, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
         if isFetching == false && hasMore == true {
             isFetching = true
-            NetworkManager.getAnimals { response in
+            NetworkManager.getAnimals(url: url) { response in
                 self.isFetching = false
                 self.configurePaginationVariables(response: response)
                 completion(response)

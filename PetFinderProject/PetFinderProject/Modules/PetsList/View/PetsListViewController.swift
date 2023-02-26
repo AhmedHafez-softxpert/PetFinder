@@ -13,7 +13,9 @@ class PetsListViewController: UIViewController {
     
     private var presenter: PetsListOutput?
     var pets: [AnimalViewModel] = []
-
+    var animalsViewModel: AnimalsViewModel?
+    
+    var selectedFilterIndex = 0
     var selectedFilter: String = "" {
         didSet {
             print("didSet selectedFilter \(selectedFilter)")
@@ -73,6 +75,15 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
 
 //MARK: -> PetsListPresenterToView
 extension PetsListViewController: PetsListInput {
+    func getSelectedFilterIndex() -> Int {
+        return selectedFilterIndex
+    }
+    
+    
+    func getNextPageUrl() -> String? {
+        return animalsViewModel?.nextPageUrl
+    }
+    
     func hideLoadingView() {
         let parent = self.parent as! PetsFilterViewController
         parent.hideLoadingView()
@@ -87,6 +98,7 @@ extension PetsListViewController: PetsListInput {
     }
     
     func updateAnimalsDataSource(animalsViewModel: AnimalsViewModel?) {
+        self.animalsViewModel = animalsViewModel
         pets.append(contentsOf: animalsViewModel?.animals ?? [])
     }
     
@@ -130,6 +142,8 @@ protocol PetsListInput: AnyObject {
     func updateAnimalsDataSource(animalsViewModel: AnimalsViewModel?)
     func reloadData()
     func getSelectedFilter() -> String
+    func getSelectedFilterIndex() -> Int
+    func getNextPageUrl() -> String?
     func clearAnimalsDataSource()
     func showLoadingView()
     func hideLoadingView()

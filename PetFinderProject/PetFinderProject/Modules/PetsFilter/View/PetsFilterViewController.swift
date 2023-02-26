@@ -22,9 +22,6 @@ class PetsFilterViewController: UIViewController {
         super.viewDidLoad()
         presenter = DependencyFactory.shared.getPresenterForPetsFilterVC(vc: self)
         presenter?.onViewDidLoad()
-        NetworkManager.getAnimals { success in
-            print("success get animals vc \(success)")
-        }
         
     }
     
@@ -32,13 +29,6 @@ class PetsFilterViewController: UIViewController {
         if segue.identifier == "PetsFilterViewController" {
             petsListVC = segue.destination as! PetsListViewController
            
-        }
-    }
-    
-    
-    func getAnimals() {
-        NetworkManager.getAnimals { success in
-            print("result from vc \(success)")
         }
     }
     
@@ -75,6 +65,7 @@ extension PetsFilterViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedFilter = filters[indexPath.item]
+        petsListVC?.selectedFilterIndex = indexPath.item
         petsListVC?.selectedFilter = selectedFilter
     }
     
