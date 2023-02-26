@@ -13,7 +13,12 @@ class PetsListViewController: UIViewController {
     
     var presenter: PetsListPresenter?
     var pets: [AnimalViewModel] = []
-    
+
+    var selectedFilter: String = "" {
+        didSet {
+            print("didSet selectedFilter \(selectedFilter)")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +32,7 @@ class PetsListViewController: UIViewController {
         petsCollectionView.delegate = self
         petsCollectionView.register(UINib(nibName: "PetCVC", bundle: nil), forCellWithReuseIdentifier: "PetCVC")
     }
-       
-
+    
 }
 
 //MARK: -> collectionView Methods
@@ -49,33 +53,46 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt \(indexPath.item)")
-        presenter?.getAnimals()
+        
     }
     
+
     
+}
+
+//MARK: -> PetsListPresenterToView
+extension PetsListViewController: PetsListInput {
+   
+    func initUISetup() {
+        print("initUISetup called from vc")
+        setupPetsCollectionView()
+    }
     
+    func updateDataSource(animalsViewModel: AnimalsViewModel?) {
+        pets.append(contentsOf: animalsViewModel?.animals ?? [])
+    }
+    
+    func reloadData() {
+        petsCollectionView.reloadData()
+    }
     
     
     
     
 }
 
-//MARK: -> PetsListPresenterToView
-extension PetsListViewController: PetsListPresenterToView {
-    
-    
-    func initUISetup() {
-        print("initUISetup called from vc")
-        setupPetsCollectionView()
-    }
-    
-    func didFetchAnimals(animals: [AnimalViewModel]) {
-        print("did fetch animals called from vc")
-        pets.append(contentsOf: animals)
-        DispatchQueue.main.async {
-            self.petsCollectionView.reloadData()
-        }
-    }
-    
-    
+
+//MARK: - Viper protocols
+
+protocol PetsListOutput: AnyObject {
+    func onViewDidLoad()
+    func onViewWillAppear()
 }
+
+protocol PetsListInput: AnyObject {
+    func initUISetup()
+    func updateDataSource(animalsViewModel: AnimalsViewModel?)
+    func reloadData()
+}
+
+

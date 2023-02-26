@@ -20,5 +20,12 @@ struct AnimalViewModel {
     var address: String
     var url: String
     
+}
+
+
+struct AnimalsViewModel {
+    var animals: [AnimalViewModel]
+    var nextPageUrl: String?
+    
     
 }

@@ -11,19 +11,27 @@ class PetsFilterViewController: UIViewController {
     
     @IBOutlet weak var petsFilterCollectionView: UICollectionView!
     
-    
     var presenter: PetsFilterPresenter?
     let filters: [String] = ["All", "Cat", "Horse", "Bird", "Rabbit"]
 
+    var selectedFilter = ""
+    var petsListVC: PetsListViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = DependencyFactory.shared.getPresenterForSearchPetsVC(vc: self)
+        presenter = DependencyFactory.shared.getPresenterForPetsFilterVC(vc: self)
         presenter?.onViewDidLoad()
         NetworkManager.getAnimals { success in
             print("success get animals vc \(success)")
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PetsFilterViewController" {
+            petsListVC = segue.destination as! PetsListViewController
+           
+        }
     }
     
     
@@ -54,6 +62,11 @@ extension PetsFilterViewController: UICollectionViewDataSource, UICollectionView
         let filter = filters[indexPath.row]
         cell.configure(filter: filter)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedFilter = filters[indexPath.item]
+        petsListVC?.selectedFilter = selectedFilter
     }
     
     

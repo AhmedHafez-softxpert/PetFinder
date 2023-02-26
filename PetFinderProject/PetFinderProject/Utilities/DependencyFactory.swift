@@ -12,13 +12,13 @@ class DependencyFactory {
     
     static let shared = DependencyFactory()
     
-    func getPresenterForSearchPetsVC(vc: PetsFilterPresenterToView) -> PetsFilterPresenter {
+    func getPresenterForPetsFilterVC(vc: PetsFilterPresenterToView) -> PetsFilterPresenter {
         let interactor = PetsFilterInteractor()
         let presenter = PetsFilterPresenter(view: vc, interactor: interactor)
         return presenter
     }
     
-    func getPresenterForPetsListVC(vc: PetsListPresenterToView) -> PetsListPresenter {
+    func getPresenterForPetsListVC(vc: PetsListInput) -> PetsListPresenter {
         let interactor = PetsListInteractor()
         let presenter = PetsListPresenter(view: vc, interactor: interactor)
         return presenter

@@ -7,51 +7,47 @@
 
 import Foundation
 
-protocol PetsListPresenterToView: AnyObject {
-    func initUISetup()
-    func didFetchAnimals(animals: [AnimalViewModel])
-}
 
 class PetsListPresenter {
     
-    var view: PetsListPresenterToView
+    private var view: PetsListInput
     
-    var interactor: PetsListInteractor
+    private var interactor: PetsListInteractor
     
-    init(view: PetsListPresenterToView, interactor: PetsListInteractor) {
+    init(view: PetsListInput, interactor: PetsListInteractor) {
         self.view = view
         self.interactor = interactor
     }
     
-    func onViewDidLoad() {
-        view.initUISetup()
-        getAnimals()
-    }
+   
     
-    func getAnimals() {
+    private func getAnimals() {
         interactor.getAnimals { [weak self] response in
             guard let self = self else {return}
             print("interactor.getAnimals from presenter")
-            let animals = self.handleAnimalResponse(response: response)
-            self.view.didFetchAnimals(animals: animals)
+            let animalsViewModel = self.getAnimalsViewModel(from: response)
+            self.view.updateDataSource(animalsViewModel: animalsViewModel)
+            self.view.reloadData()
         }
     }
     
-    func handleAnimalResponse(response: AnimalsResponse?) -> [AnimalViewModel] {
+    // should I move this func to struct AnimalsViewModel?
+    func getAnimalsViewModel(from response: AnimalsResponse?) -> AnimalsViewModel? {
         var petsArr: [AnimalViewModel] = []
         print("handleAnimalResponse init arr \(petsArr)")
-        guard response != nil else {return petsArr}
+        guard response != nil else {return nil}
         let animals = response?.animals ?? []
         for animal in animals {
-            var animalViewModel = convertAnimalToViewModel(animal: animal)
+            var animalViewModel = getAnimalViewModel(from: animal)
             petsArr.append(animalViewModel)
         }
-        
-        return petsArr
+        let nextPageUrl = response?.pagination?.nextPage
+        let animalsViewModel = AnimalsViewModel(animals: petsArr, nextPageUrl: nextPageUrl)
+        return animalsViewModel
     }
     
     
-    func convertAnimalToViewModel(animal: Animal) -> AnimalViewModel {
+    func getAnimalViewModel(from animal: Animal) -> AnimalViewModel {
         let firstSmallPhoto = (animal.photos?.count ?? 0) > 0 ? (animal.photos?[0].small ?? "") : ""
         let firstMediumPhoto = (animal.photos?.count ?? 0) > 0 ? (animal.photos?[0].medium ?? "") : ""
         let address = animal.contact?.address
@@ -63,4 +59,16 @@ class PetsListPresenter {
     }
    
     
+}
+//MARK: -> PetsListOutput
+
+extension PetsListPresenter: PetsListOutput {
+    func onViewDidLoad() {
+        view.initUISetup()
+        getAnimals()
+    }
+    
+    func onViewWillAppear() {
+        print("onViewWillAppear called from presenter")
+    }
 }
