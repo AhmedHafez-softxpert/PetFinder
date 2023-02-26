@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Pets View Controller-->
+        <!--Pets Filter View Controller-->
         <scene sceneID="tpy-mK-jwg">
             <objects>
-                <viewController storyboardIdentifier="SearchPetsViewController" id="zax-p7-lEh" customClass="SearchPetsViewController" customModule="PetFinderProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetsFilterViewController" id="zax-p7-lEh" customClass="PetsFilterViewController" customModule="PetFinderProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAI-Un-ioO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

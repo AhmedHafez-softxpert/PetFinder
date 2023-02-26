@@ -7,12 +7,12 @@
 
 import UIKit
 
-class SearchPetsViewController: UIViewController {
+class PetsFilterViewController: UIViewController {
     
     @IBOutlet weak var petsFilterCollectionView: UICollectionView!
     
     
-    var presenter: SearchPetsPresenter?
+    var presenter: PetsFilterPresenter?
     let filters: [String] = ["All", "Cat", "Horse", "Bird", "Rabbit"]
 
     
@@ -44,7 +44,7 @@ class SearchPetsViewController: UIViewController {
 
 
 //MARK: -> collection view methods
-extension SearchPetsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension PetsFilterViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         filters.count
     }
@@ -62,7 +62,7 @@ extension SearchPetsViewController: UICollectionViewDataSource, UICollectionView
 
 
 //MARK: -> SearchPetsPresenterToView
-extension SearchPetsViewController: SearchPetsPresenterToView {
+extension PetsFilterViewController: PetsFilterPresenterToView {
     func initUISetup() {
         print("initUISetup called vc")
         setupFilterCollectionView()

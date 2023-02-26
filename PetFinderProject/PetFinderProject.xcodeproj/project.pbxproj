@@ -11,7 +11,7 @@
 		BB31A3F429A7A22C006FA3E4 /* AnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31A3F329A7A22B006FA3E4 /* AnimalViewModel.swift */; };
 		BB65BD7929A6053C0063C858 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB65BD7829A6053C0063C858 /* HomeScreen.storyboard */; };
 		BB65BD7B29A620670063C858 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7A29A620670063C858 /* Helpers.swift */; };
-		BB65BD7D29A659DF0063C858 /* SearchPetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7C29A659DF0063C858 /* SearchPetsPresenter.swift */; };
+		BB65BD7D29A659DF0063C858 /* PetsFilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7C29A659DF0063C858 /* PetsFilterPresenter.swift */; };
 		BB65BD8129A65E2B0063C858 /* FilterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65BD7F29A65E2B0063C858 /* FilterCVC.swift */; };
 		BB65BD8229A65E2B0063C858 /* FilterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB65BD8029A65E2B0063C858 /* FilterCVC.xib */; };
 		BB8712C129A77F7B00A339B1 /* PetsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712C029A77F7B00A339B1 /* PetsListPresenter.swift */; };
@@ -27,7 +27,7 @@
 		BBBA040D29A4F1B300C3C912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBA040B29A4F1B300C3C912 /* Main.storyboard */; };
 		BBBA040F29A4F1B500C3C912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBBA040E29A4F1B500C3C912 /* Assets.xcassets */; };
 		BBBA041229A4F1B500C3C912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBA041029A4F1B500C3C912 /* LaunchScreen.storyboard */; };
-		BBBA041A29A4F37500C3C912 /* SearchPetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */; };
+		BBBA041A29A4F37500C3C912 /* PetsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA041929A4F37500C3C912 /* PetsFilterViewController.swift */; };
 		BBBA042629A4F8DF00C3C912 /* PetTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042429A4F8DF00C3C912 /* PetTVC.swift */; };
 		BBBA042729A4F8DF00C3C912 /* PetTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBA042529A4F8DF00C3C912 /* PetTVC.xib */; };
 		BBBA042929A5107E00C3C912 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042829A5107E00C3C912 /* Constants.swift */; };
@@ -35,14 +35,14 @@
 		BBE402E029A6729300BD9779 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402DF29A6729300BD9779 /* TokenModel.swift */; };
 		BBE402E829A6735400BD9779 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402E729A6735400BD9779 /* Animal.swift */; };
 		BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */; };
-		BBE402ED29A6776F00BD9779 /* SearchPetsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402EC29A6776F00BD9779 /* SearchPetsInteractor.swift */; };
+		BBE402ED29A6776F00BD9779 /* PetsFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402EC29A6776F00BD9779 /* PetsFilterInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BB31A3F329A7A22B006FA3E4 /* AnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewModel.swift; sourceTree = "<group>"; };
 		BB65BD7829A6053C0063C858 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
 		BB65BD7A29A620670063C858 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		BB65BD7C29A659DF0063C858 /* SearchPetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPetsPresenter.swift; sourceTree = "<group>"; };
+		BB65BD7C29A659DF0063C858 /* PetsFilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsFilterPresenter.swift; sourceTree = "<group>"; };
 		BB65BD7F29A65E2B0063C858 /* FilterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCVC.swift; sourceTree = "<group>"; };
 		BB65BD8029A65E2B0063C858 /* FilterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCVC.xib; sourceTree = "<group>"; };
 		BB8712C029A77F7B00A339B1 /* PetsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsListPresenter.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		BBBA040E29A4F1B500C3C912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBBA041129A4F1B500C3C912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBBA041329A4F1B500C3C912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPetsViewController.swift; sourceTree = "<group>"; };
+		BBBA041929A4F37500C3C912 /* PetsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsFilterViewController.swift; sourceTree = "<group>"; };
 		BBBA042429A4F8DF00C3C912 /* PetTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTVC.swift; sourceTree = "<group>"; };
 		BBBA042529A4F8DF00C3C912 /* PetTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTVC.xib; sourceTree = "<group>"; };
 		BBBA042829A5107E00C3C912 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		BBE402DF29A6729300BD9779 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		BBE402E729A6735400BD9779 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
-		BBE402EC29A6776F00BD9779 /* SearchPetsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPetsInteractor.swift; sourceTree = "<group>"; };
+		BBE402EC29A6776F00BD9779 /* PetsFilterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsFilterInteractor.swift; sourceTree = "<group>"; };
 		BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetFinderProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1CE713725AA842C7D69B91 /* Pods-PetFinderProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFinderProject.debug.xcconfig"; path = "Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject.debug.xcconfig"; sourceTree = "<group>"; };
 		DC60C6F8CFF8917571A6541C /* Pods-PetFinderProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFinderProject.release.xcconfig"; path = "Target Support Files/Pods-PetFinderProject/Pods-PetFinderProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,13 +154,13 @@
 		BBBA041B29A4F6A000C3C912 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				BBBA041C29A4F6B200C3C912 /* SearchPets */,
+				BBBA041C29A4F6B200C3C912 /* PetsFilter */,
 				BBE402E129A672E800BD9779 /* PetsList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		BBBA041C29A4F6B200C3C912 /* SearchPets */ = {
+		BBBA041C29A4F6B200C3C912 /* PetsFilter */ = {
 			isa = PBXGroup;
 			children = (
 				BBBA041D29A4F6BD00C3C912 /* View */,
@@ -169,13 +169,13 @@
 				BBBA041E29A4F74100C3C912 /* Interactor */,
 				BBBA042029A4F75B00C3C912 /* Entitiy */,
 			);
-			path = SearchPets;
+			path = PetsFilter;
 			sourceTree = "<group>";
 		};
 		BBBA041D29A4F6BD00C3C912 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BBBA041929A4F37500C3C912 /* SearchPetsViewController.swift */,
+				BBBA041929A4F37500C3C912 /* PetsFilterViewController.swift */,
 				BB65BD7829A6053C0063C858 /* HomeScreen.storyboard */,
 			);
 			path = View;
@@ -184,7 +184,7 @@
 		BBBA041E29A4F74100C3C912 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				BBE402EC29A6776F00BD9779 /* SearchPetsInteractor.swift */,
+				BBE402EC29A6776F00BD9779 /* PetsFilterInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 		BBBA041F29A4F74D00C3C912 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				BB65BD7C29A659DF0063C858 /* SearchPetsPresenter.swift */,
+				BB65BD7C29A659DF0063C858 /* PetsFilterPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -434,18 +434,18 @@
 				BB8712C729A7809500A339B1 /* PetsListViewController.swift in Sources */,
 				BB8712C129A77F7B00A339B1 /* PetsListPresenter.swift in Sources */,
 				BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */,
-				BBBA041A29A4F37500C3C912 /* SearchPetsViewController.swift in Sources */,
+				BBBA041A29A4F37500C3C912 /* PetsFilterViewController.swift in Sources */,
 				BB65BD7B29A620670063C858 /* Helpers.swift in Sources */,
 				BB8712C329A77F8C00A339B1 /* PetsListInteractor.swift in Sources */,
 				BBE402E829A6735400BD9779 /* Animal.swift in Sources */,
 				BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */,
 				BBBA042629A4F8DF00C3C912 /* PetTVC.swift in Sources */,
-				BB65BD7D29A659DF0063C858 /* SearchPetsPresenter.swift in Sources */,
+				BB65BD7D29A659DF0063C858 /* PetsFilterPresenter.swift in Sources */,
 				BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */,
 				BB8712CD29A78FA600A339B1 /* PetCVC.swift in Sources */,
 				BB65BD8129A65E2B0063C858 /* FilterCVC.swift in Sources */,
 				BBBA042929A5107E00C3C912 /* Constants.swift in Sources */,
-				BBE402ED29A6776F00BD9779 /* SearchPetsInteractor.swift in Sources */,
+				BBE402ED29A6776F00BD9779 /* PetsFilterInteractor.swift in Sources */,
 				BB8712C929A784C400A339B1 /* PetsListRouter.swift in Sources */,
 				BB31A3F429A7A22C006FA3E4 /* AnimalViewModel.swift in Sources */,
 				BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */,

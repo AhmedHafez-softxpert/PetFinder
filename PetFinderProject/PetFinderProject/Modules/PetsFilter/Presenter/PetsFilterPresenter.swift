@@ -7,18 +7,18 @@
 
 import Foundation
 
-protocol SearchPetsPresenterToView: AnyObject {
+protocol PetsFilterPresenterToView: AnyObject {
     func initUISetup()
 }
 
 
-class SearchPetsPresenter {
+class PetsFilterPresenter {
     
-    weak var view: SearchPetsPresenterToView?
+    weak var view: PetsFilterPresenterToView?
     
-    var interactor: SearchPetsInteractor?
+    var interactor: PetsFilterInteractor?
     
-    init(view: SearchPetsPresenterToView, interactor: SearchPetsInteractor) {
+    init(view: PetsFilterPresenterToView, interactor: PetsFilterInteractor) {
         self.view = view
         self.interactor = interactor
     }

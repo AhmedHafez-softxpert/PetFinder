@@ -8,7 +8,7 @@
 import Foundation
 
  
-class SearchPetsInteractor {
+class PetsFilterInteractor {
     
     func testImplementation() {
         print("SearchPetsInteractor testImplementation")
