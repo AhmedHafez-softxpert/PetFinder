@@ -101,9 +101,18 @@
 		BB4DBD0D29ACACC300B07CCD /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				BB4DBD0E29ACACDD00B07CCD /* HTTPStatusCode.swift */,
+				BB65BD7A29A620670063C858 /* Helpers.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		BB4DBD1029ACE07000B07CCD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BBBA042B29A527CA00C3C912 /* NetworkManager.swift */,
+				BB4DBD0E29ACACDD00B07CCD /* HTTPStatusCode.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BB65BD7E29A65E070063C858 /* FilterCell */ = {
@@ -146,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4DBD0D29ACACC300B07CCD /* Support */,
+				BB4DBD1029ACE07000B07CCD /* Network */,
 				BBE402E929A6766E00BD9779 /* Utilities */,
 				BBBA042A29A527AF00C3C912 /* Managers */,
 				BBBA040529A4F1B200C3C912 /* AppDelegate.swift */,
@@ -156,8 +166,6 @@
 				BBBA040E29A4F1B500C3C912 /* Assets.xcassets */,
 				BBBA041029A4F1B500C3C912 /* LaunchScreen.storyboard */,
 				BBBA041329A4F1B500C3C912 /* Info.plist */,
-				BBBA042829A5107E00C3C912 /* Constants.swift */,
-				BB65BD7A29A620670063C858 /* Helpers.swift */,
 			);
 			path = PetFinderProject;
 			sourceTree = "<group>";
@@ -235,7 +243,6 @@
 		BBBA042A29A527AF00C3C912 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				BBBA042B29A527CA00C3C912 /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -298,6 +305,7 @@
 		BBE402E929A6766E00BD9779 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BBBA042829A5107E00C3C912 /* Constants.swift */,
 				BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */,
 			);
 			path = Utilities;

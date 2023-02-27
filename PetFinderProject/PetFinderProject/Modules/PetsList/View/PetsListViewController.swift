@@ -13,7 +13,6 @@ class PetsListViewController: UIViewController {
     @IBOutlet weak var petsCollectionView: UICollectionView!
     
     private var presenter: PetsListOutput?
-    var pets: [AnimalViewModel] = []
     var animalsViewModel: AnimalsViewModel?
     
     var isFetchingAnimals: Bool = false
@@ -36,8 +35,8 @@ class PetsListViewController: UIViewController {
         presenter = DependencyFactory.shared.getPresenterForPetsListVC(vc: self)
     }
     
-    
-    func setupPetsCollectionView() {
+    //MARK: - private methods
+   private func setupPetsCollectionView() {
         petsCollectionView.dataSource = self
         petsCollectionView.delegate = self
         petsCollectionView.register(UINib(nibName: "PetCell", bundle: nil), forCellWithReuseIdentifier: "PetCell")
@@ -49,19 +48,18 @@ class PetsListViewController: UIViewController {
 
 //MARK: -> collectionView Methods
 
-extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pets.count
+        return self.animalsViewModel?.animals.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as! PetCell
-        cell.maxWidth = collectionView.frame.width
-//        print("pets will be printed \(self.pets)")
-//        print("indexPath.item will be printed \(indexPath.item)")
-        let petModel = pets[indexPath.item]
-        cell.configure(model: petModel)
-        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as? PetCell  else {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath)
+        }
+        if let petModel = self.animalsViewModel?.animals[indexPath.item] {
+            cell.configure(model: petModel)
+        }
         return cell
     }
     
@@ -70,7 +68,7 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == pets.count - 1 {
+        if indexPath.row == (animalsViewModel?.animals.count ?? 0) - 1 {
             // did reached end of table view
             print("did reach end of table isFetchingAnimals = \(isFetchingAnimals)")
             if isFetchingAnimals == false {
@@ -78,6 +76,12 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
             }
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 120)
+    }
+    
+    
 
     
 }
@@ -95,9 +99,7 @@ extension PetsListViewController: PetsListInput {
     }
     
    
-    
-    
-   
+
     func setupUI() {
         print("initUISetup called from vc")
         setupPetsCollectionView()
@@ -105,12 +107,13 @@ extension PetsListViewController: PetsListInput {
     
     func updateAnimalsDataSource(firstTime: Bool, animalsViewModel: AnimalsViewModel?) {
         if animalsViewModel != nil {
+            let oldAnimals = self.animalsViewModel?.animals ?? []
+            let newAnimals = animalsViewModel?.animals ?? []
             self.animalsViewModel = animalsViewModel
-            let animals = animalsViewModel?.animals ?? []
             if firstTime {
-                pets = animals
+                self.animalsViewModel?.animals = newAnimals
             } else {
-                pets.append(contentsOf: animals)
+                self.animalsViewModel?.animals = oldAnimals + newAnimals
             }
             
         }
@@ -125,10 +128,7 @@ extension PetsListViewController: PetsListInput {
         return selectedFilter
     }
     
-    func clearAnimalsDataSource() {
-        pets = []
-    }
-    
+  
     func showLoadingView() {
         print("show loading called from PetsListViewController")
         isFetchingAnimals = true
@@ -167,7 +167,6 @@ protocol PetsListInput: AnyObject {
     func getSelectedFilter() -> String
     func getSelectedFilterIndex() -> Int
     func getNextPageUrl() -> String?
-//    func clearAnimalsDataSource()
     func showLoadingView()
     func hideLoadingView()
 }

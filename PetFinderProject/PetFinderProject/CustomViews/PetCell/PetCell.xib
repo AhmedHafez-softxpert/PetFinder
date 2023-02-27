@@ -103,7 +103,6 @@
             </constraints>
             <size key="customSize" width="292" height="110"/>
             <connections>
-                <outlet property="containerViewWidthAnchor" destination="JcO-Tp-erh" id="ruT-TD-0QM"/>
                 <outlet property="petGenderLabel" destination="n7h-Z8-CxG" id="Rde-5V-t4F"/>
                 <outlet property="petImageView" destination="6je-rJ-wdb" id="alg-VN-t4H"/>
                 <outlet property="petNameLabel" destination="HCE-EJ-vdr" id="LGS-B9-Lpc"/>

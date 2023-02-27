@@ -20,7 +20,7 @@ class PetsListPresenter {
     }
     
     private func getAnimals(isFirstTime: Bool) {
-        let url = configureUrl(isFirstTime: isFirstTime)
+        let url = getConfiguredUrl(isFirstTime: isFirstTime)
         guard let url = url else {return}
         if isFirstTime {
             view.showLoadingView()
@@ -36,7 +36,8 @@ class PetsListPresenter {
         }
     }
     
-    func configureUrl(isFirstTime: Bool) -> String? {
+    func getConfiguredUrl(isFirstTime: Bool) -> String? {
+        // move to network manager
         var url: String = ""
         let filter = view.getSelectedFilter()
         let filterIndex = view.getSelectedFilterIndex()
