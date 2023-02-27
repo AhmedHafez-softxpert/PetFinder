@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PetsListViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class PetsListViewController: UIViewController {
     private var presenter: PetsListOutput?
     var pets: [AnimalViewModel] = []
     var animalsViewModel: AnimalsViewModel?
+    
+    var isFetchingAnimals: Bool = false
     
     var selectedFilterIndex = 0
     var selectedFilter: String = "" {
@@ -54,8 +57,8 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as! PetCell
         cell.maxWidth = collectionView.frame.width
-        print("pets will be printed \(self.pets)")
-        print("indexPath.item will be printed \(indexPath.item)")
+//        print("pets will be printed \(self.pets)")
+//        print("indexPath.item will be printed \(indexPath.item)")
         let petModel = pets[indexPath.item]
         cell.configure(model: petModel)
         
@@ -64,17 +67,24 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt \(indexPath.item)")
-        
     }
     
-    
-    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.item == pets.count - 1 {
+            // did reached end of table view
+            print("did reach end of table isFetchingAnimals = \(isFetchingAnimals)")
+            if isFetchingAnimals == false {
+                presenter?.didReachedEndOfTable()
+            }
+        }
+    }
 
     
 }
 
 //MARK: -> PetsListPresenterToView
 extension PetsListViewController: PetsListInput {
+   
     func getSelectedFilterIndex() -> Int {
         return selectedFilterIndex
     }
@@ -84,11 +94,7 @@ extension PetsListViewController: PetsListInput {
         return animalsViewModel?.nextPageUrl
     }
     
-    func hideLoadingView() {
-        let parent = self.parent as! PetsFilterViewController
-        parent.hideLoadingView()
-    }
-    
+   
     
     
    
@@ -97,14 +103,22 @@ extension PetsListViewController: PetsListInput {
         setupPetsCollectionView()
     }
     
-    func updateAnimalsDataSource(animalsViewModel: AnimalsViewModel?) {
-        self.animalsViewModel = animalsViewModel
-        pets.append(contentsOf: animalsViewModel?.animals ?? [])
+    func updateAnimalsDataSource(firstTime: Bool, animalsViewModel: AnimalsViewModel?) {
+        if animalsViewModel != nil {
+            self.animalsViewModel = animalsViewModel
+            let animals = animalsViewModel?.animals ?? []
+            if firstTime {
+                pets = animals
+            } else {
+                pets.append(contentsOf: animals)
+            }
+            
+        }
+       
     }
     
     func reloadData() {
-        petsCollectionView.reloadData()
-        
+        self.petsCollectionView.reloadData()
     }
     
     func getSelectedFilter() -> String {
@@ -117,10 +131,18 @@ extension PetsListViewController: PetsListInput {
     
     func showLoadingView() {
         print("show loading called from PetsListViewController")
+        isFetchingAnimals = true
         let parent = self.parent as! PetsFilterViewController
         parent.showLoadingView()
         
     }
+    
+    func hideLoadingView() {
+        isFetchingAnimals = false
+        let parent = self.parent as! PetsFilterViewController
+        parent.hideLoadingView()
+    }
+    
 
     
     
@@ -135,16 +157,17 @@ protocol PetsListOutput: AnyObject {
     func viewDidLoad()
     func viewWillAppear()
     func didAddNewFilter(filter: String)
+    func didReachedEndOfTable()
 }
 
 protocol PetsListInput: AnyObject {
     func setupUI()
-    func updateAnimalsDataSource(animalsViewModel: AnimalsViewModel?)
+    func updateAnimalsDataSource(firstTime: Bool, animalsViewModel: AnimalsViewModel?)
     func reloadData()
     func getSelectedFilter() -> String
     func getSelectedFilterIndex() -> Int
     func getNextPageUrl() -> String?
-    func clearAnimalsDataSource()
+//    func clearAnimalsDataSource()
     func showLoadingView()
     func hideLoadingView()
 }

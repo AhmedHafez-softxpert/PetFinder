@@ -22,11 +22,15 @@ class PetsListPresenter {
     private func getAnimals(isFirstTime: Bool) {
         let url = configureUrl(isFirstTime: isFirstTime)
         guard let url = url else {return}
+        if isFirstTime {
+            view.showLoadingView()
+        }
+        
         interactor.getAnimals(url: url) { [weak self] response in
             guard let self = self else {return}
             print("interactor.getAnimals from presenter")
             let animalsViewModel = AnimalsViewModel(from: response)
-            self.view.updateAnimalsDataSource(animalsViewModel: animalsViewModel)
+            self.view.updateAnimalsDataSource(firstTime: isFirstTime, animalsViewModel: animalsViewModel)
             self.view.reloadData()
             self.view.hideLoadingView()
         }
@@ -55,16 +59,18 @@ class PetsListPresenter {
 
 extension PetsListPresenter: PetsListOutput {
     
+    func didReachedEndOfTable() {
+        getAnimals(isFirstTime: false)
+    }
+    
+    
     func didAddNewFilter(filter: String) {
         print("filter from presenter class \(filter)")
-        view.showLoadingView()
-        view.clearAnimalsDataSource()
         getAnimals(isFirstTime: true)
     }
     
     func viewDidLoad() {
         view.setupUI()
-//        getAnimals(isFirstTime: true)
     }
     
     func viewWillAppear() {

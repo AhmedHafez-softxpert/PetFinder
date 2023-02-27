@@ -17,17 +17,11 @@ class PetsListInteractor {
     
     
     func getAnimals(url: String, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
-        if isFetching == false && hasMore == true {
-            isFetching = true
-            NetworkManager.getAnimals(url: url) { response in
-                self.isFetching = false
-                self.configurePaginationVariables(response: response)
-                completion(response)
-            }
-        } else {
-            print("isFetching = true or hasMore = false")
+        NetworkManager.getAnimals(url: url) { response in
+            completion(response)
         }
-       
+        
+        
     }
     
     func configurePaginationVariables(response: AnimalsResponse?) {
