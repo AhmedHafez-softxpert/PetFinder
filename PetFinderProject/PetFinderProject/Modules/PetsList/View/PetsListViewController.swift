@@ -89,6 +89,15 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
 
 //MARK: -> PetsListPresenterToView
 extension PetsListViewController: PetsListInput {
+    func clearAnimalsViewModel() {
+        animalsViewModel = nil 
+    }
+    
+    
+    func getCurrentAnimalsViewModel() -> AnimalsViewModel? {
+        return animalsViewModel
+    }
+    
    
     func getSelectedFilterIndex() -> Int {
         return selectedFilterIndex
@@ -106,17 +115,9 @@ extension PetsListViewController: PetsListInput {
         setupPetsCollectionView()
     }
     
-    func updateAnimalsDataSource(firstTime: Bool, animalsViewModel: AnimalsViewModel?) {
+    func updateAnimalsDataSource(animalsViewModel: AnimalsViewModel?) {
         if animalsViewModel != nil {
-            let oldAnimals = self.animalsViewModel?.animals ?? []
-            let newAnimals = animalsViewModel?.animals ?? []
             self.animalsViewModel = animalsViewModel
-            if firstTime {
-                self.animalsViewModel?.animals = newAnimals
-            } else {
-                self.animalsViewModel?.animals = oldAnimals + newAnimals
-            }
-            
         }
        
     }
@@ -163,10 +164,12 @@ protocol PetsListOutput: AnyObject {
 
 protocol PetsListInput: AnyObject {
     func setupUI()
-    func updateAnimalsDataSource(firstTime: Bool, animalsViewModel: AnimalsViewModel?)
+    func updateAnimalsDataSource(animalsViewModel: AnimalsViewModel?)
+    func clearAnimalsViewModel()
     func reloadData()
     func getSelectedFilter() -> String
     func getSelectedFilterIndex() -> Int
+    func getCurrentAnimalsViewModel() -> AnimalsViewModel?
     func getNextPageUrl() -> String?
     func showLoadingView()
     func hideLoadingView()

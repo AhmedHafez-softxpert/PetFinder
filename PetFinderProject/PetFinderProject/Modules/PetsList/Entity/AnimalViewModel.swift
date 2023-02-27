@@ -49,8 +49,11 @@ struct AnimalsViewModel {
     var animals: [AnimalViewModel]
     var nextPageUrl: String?
     
-    init?(from response: AnimalsResponse?) {
+    init?(from response: AnimalsResponse?, previousAnimalsViewModel: AnimalsViewModel?) {
         var petsArr: [AnimalViewModel] = []
+        if previousAnimalsViewModel != nil {
+            petsArr.append(contentsOf: previousAnimalsViewModel?.animals ?? [])
+        }
         print("handleAnimalResponse init arr \(petsArr)")
         guard response != nil else {return nil}
         let animals = response?.animals ?? []

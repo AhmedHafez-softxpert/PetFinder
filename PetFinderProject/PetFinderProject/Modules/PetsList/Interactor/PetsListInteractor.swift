@@ -16,8 +16,8 @@ class PetsListInteractor {
     var fetchLimit = 20
     
     
-    func getAnimals(url: String, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
-        NetworkManager.getAnimals(url: url) { response in
+    func getAnimals(filterIndex: Int, nextPageUrl: String?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+        NetworkManager.getAnimals(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
             completion(response)
         }
         

@@ -51,10 +51,15 @@ struct NetworkManager {
         }
     }
     
-    static func getAnimals(url: String, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+    static func getAnimals(filterIndex: Int, nextPageUrl: String?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(AuthModel.accessToken)",
         ]
+        guard let url = getConfiguredUrl(filterIndex: filterIndex, nextPageUrl: nextPageUrl) else {
+            completion(nil)
+            return
+        }
+        
         AF.request(url, method: .get, headers: headers).responseJSON { response in
             print("getAnimals response json \( response )")
             print("getAnimals status code will be printed \(response.response?.statusCode)")
@@ -64,7 +69,7 @@ struct NetworkManager {
                 print("success part getAnimals \(json)")
                 let statusCode = response.response?.statusCode ?? 0
                 let httpStatusCode = HTTPStatusCode(rawValue: statusCode)
-                handleAnimalsHttpUrlResponse(url: url, json: json, httPStatusCode: httpStatusCode) { response in
+                handleAnimalsHttpUrlResponse(filterIndex: filterIndex, nextPageUrl: nextPageUrl, json: json, httPStatusCode: httpStatusCode) { response in
                     completion(response)
                 }
             case .failure(let error):
@@ -75,7 +80,23 @@ struct NetworkManager {
     }
     
     
-    static func handleAnimalsHttpUrlResponse(url: String, json: Any, httPStatusCode: HTTPStatusCode?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+    static func getConfiguredUrl(filterIndex: Int, nextPageUrl: String?) -> String? {
+        // move to network manager
+        var url: String = ""
+
+        let filterValue = filterIndex == 0 ? "" : "type=\(Constants.petsFilters[filterIndex])"
+        if nextPageUrl == nil {
+           url = Constants.baseUrl + filterValue
+            return url
+        } else {
+            guard nextPageUrl != nil else {return nil}
+            url = Constants.baseUrlForPagination + (nextPageUrl ?? "")
+            return url
+        }
+    }
+    
+    
+    static func handleAnimalsHttpUrlResponse(filterIndex: Int, nextPageUrl: String?, json: Any, httPStatusCode: HTTPStatusCode?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
         switch httPStatusCode {
         case .ok:
             print("getAnimals status code is 200")
@@ -83,7 +104,7 @@ struct NetworkManager {
             completion(animalsResponse)
         case .unauthorized:
             print("getAnimals status code is 401")
-            handleExpiredToken(url: url) { response in
+            handleExpiredToken(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
                 completion(response)
             }
         default:
@@ -101,10 +122,10 @@ struct NetworkManager {
         return animalsResponse
     }
     
-    static func handleExpiredToken(url: String, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+    static func handleExpiredToken(filterIndex: Int , nextPageUrl: String?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
         NetworkManager.getToken { success in
             if success {
-                getAnimals(url: url) { response in
+                getAnimals(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
                     completion(response)
                 }
             } else {

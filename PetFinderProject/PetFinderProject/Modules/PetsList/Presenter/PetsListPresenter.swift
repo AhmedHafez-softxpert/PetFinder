@@ -19,37 +19,21 @@ class PetsListPresenter {
         self.interactor = interactor
     }
     
-    private func getAnimals(isFirstTime: Bool) {
-        let url = getConfiguredUrl(isFirstTime: isFirstTime)
-        guard let url = url else {return}
-        if isFirstTime {
+    private func getAnimals() {
+        let selectedFilterIndex = view.getSelectedFilterIndex()
+        let nextPageUrl = view.getNextPageUrl()
+        if nextPageUrl == nil {
             view.showLoadingView()
         }
         
-        interactor.getAnimals(url: url) { [weak self] response in
+        interactor.getAnimals(filterIndex: selectedFilterIndex, nextPageUrl: nextPageUrl) { [weak self] response in
             guard let self = self else {return}
             print("interactor.getAnimals from presenter")
-            let animalsViewModel = AnimalsViewModel(from: response)
-            self.view.updateAnimalsDataSource(firstTime: isFirstTime, animalsViewModel: animalsViewModel)
+            let previousAnimalsViewModel = self.view.getCurrentAnimalsViewModel()
+            let animalsViewModel = AnimalsViewModel(from: response, previousAnimalsViewModel: previousAnimalsViewModel)
+            self.view.updateAnimalsDataSource(animalsViewModel: animalsViewModel)
             self.view.reloadData()
             self.view.hideLoadingView()
-        }
-    }
-    
-    func getConfiguredUrl(isFirstTime: Bool) -> String? {
-        // move to network manager
-        var url: String = ""
-        let filter = view.getSelectedFilter()
-        let filterIndex = view.getSelectedFilterIndex()
-        let filterValue = filterIndex == 0 ? "" : "type=\(filter)"
-        if isFirstTime {
-           url = Constants.baseUrl + filterValue
-            return url
-        } else {
-            let nextPageUrl = view.getNextPageUrl()
-            guard nextPageUrl != nil else {return nil}
-            url = Constants.baseUrlForPagination + nextPageUrl!
-            return url
         }
     }
     
@@ -61,13 +45,15 @@ class PetsListPresenter {
 extension PetsListPresenter: PetsListOutput {
     
     func didReachedEndOfTable() {
-        getAnimals(isFirstTime: false)
+        getAnimals()
     }
     
     
     func didAddNewFilter(filter: String) {
         print("filter from presenter class \(filter)")
-        getAnimals(isFirstTime: true)
+        view.clearAnimalsViewModel()
+        view.reloadData()
+        getAnimals()
     }
     
     func viewDidLoad() {
