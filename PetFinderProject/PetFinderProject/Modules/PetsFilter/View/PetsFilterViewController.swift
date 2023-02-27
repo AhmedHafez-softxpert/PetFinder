@@ -35,7 +35,8 @@ class PetsFilterViewController: UIViewController {
     private func setupFilterCollectionView() {
         petsFilterCollectionView.dataSource = self
         petsFilterCollectionView.delegate = self
-        petsFilterCollectionView.register(UINib(nibName: "FilterCell", bundle: nil), forCellWithReuseIdentifier: "FilterCell")
+        let cellName = Constants.CellNames.filterCell.rawValue
+        petsFilterCollectionView.register(UINib(nibName: cellName, bundle: nil), forCellWithReuseIdentifier: cellName)
         
     }
     
@@ -57,7 +58,8 @@ extension PetsFilterViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCell", for: indexPath) as! FilterCell
+        let cellName = Constants.CellNames.filterCell.rawValue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath) as! FilterCell
         let filter = Constants.petsFilters[indexPath.row]
         cell.configure(filter: filter)
         return cell

@@ -23,7 +23,6 @@ class PetCell: UICollectionViewCell {
        
     }
     
-    
     func configure(model: AnimalViewModel) {
         petImageView.setImageFromUrl(url: model.firstSmallPhotoUrl)
         petNameLabel.text = model.name

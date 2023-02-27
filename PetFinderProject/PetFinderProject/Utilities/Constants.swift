@@ -16,6 +16,11 @@ struct Constants {
     static let baseUrl = "https://api.petfinder.com/v2/animals?"
     static let baseUrlForPagination = "https://api.petfinder.com"
     
-    
     static let petsFilters: [String] = ["All", "Cat", "Horse", "Bird", "Rabbit"]
+    
+    
+    enum CellNames: String {
+        case petCell = "PetCell"
+        case filterCell = "FilterCell"
+    }
 }

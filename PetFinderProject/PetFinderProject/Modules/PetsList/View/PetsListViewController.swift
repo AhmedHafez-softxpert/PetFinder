@@ -36,10 +36,10 @@ class PetsListViewController: UIViewController {
     }
     
     //MARK: - private methods
-   private func setupPetsCollectionView() {
+    private func setupPetsCollectionView() {
         petsCollectionView.dataSource = self
         petsCollectionView.delegate = self
-        petsCollectionView.register(UINib(nibName: "PetCell", bundle: nil), forCellWithReuseIdentifier: "PetCell")
+        petsCollectionView.register(UINib(nibName: Constants.CellNames.petCell.rawValue, bundle: nil), forCellWithReuseIdentifier: Constants.CellNames.petCell.rawValue)
     }
     
     
@@ -54,8 +54,9 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as? PetCell  else {
-            return collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath)
+        let cellName = Constants.CellNames.petCell.rawValue
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath) as? PetCell  else {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
         }
         if let petModel = self.animalsViewModel?.animals[indexPath.item] {
             cell.configure(model: petModel)
