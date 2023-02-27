@@ -24,11 +24,32 @@ class PetCell: UICollectionViewCell {
     }
     
     func configure(model: AnimalViewModel) {
-        petImageView.setImageFromUrl(url: model.firstSmallPhotoUrl)
-        petNameLabel.text = model.name
-        petTypeLabel.text = model.type
-        petGenderLabel.text = model.gender
+        configureImageView(url: model.firstSmallPhotoUrl)
+        configureNameLabel(name: model.name)
+        configureTypeLabel(type: model.type)
+        configureGenderLabel(gender: model.gender)
         
     }
 
+}
+
+//MARK: - configure cell private methods
+
+extension PetCell {
+    
+    private func configureImageView(url: String) {
+        petImageView.setImageFromUrl(url: url)
+    }
+    
+    private func configureNameLabel(name: String) {
+        petNameLabel.text = name
+    }
+    
+    private func configureTypeLabel(type: String) {
+        petTypeLabel.text = type
+    }
+    
+    private func configureGenderLabel(gender: String) {
+        petGenderLabel.text = gender
+    }
 }

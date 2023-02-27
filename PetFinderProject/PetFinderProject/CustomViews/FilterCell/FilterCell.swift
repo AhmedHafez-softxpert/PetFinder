@@ -20,12 +20,24 @@ class FilterCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            containerView.backgroundColor = isSelected ? .cyan : UIColor(named: "CellBackgroundColor")
+            configureContainerView(selected: isSelected)
         }
     }
 
-    
     func configure(filter: String) {
+        configureFilterLabel(filter: filter)
+    }
+}
+
+//MARK: -
+
+extension FilterCell {
+    
+    private func configureFilterLabel(filter: String) {
         filterLabel.text = filter
+    }
+    
+    private func configureContainerView(selected: Bool) {
+        containerView.backgroundColor = isSelected ? .cyan : UIColor(named: Constants.ColorsNames.cellBackgroundColor.rawValue)
     }
 }

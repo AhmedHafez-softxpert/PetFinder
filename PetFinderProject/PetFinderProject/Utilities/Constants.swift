@@ -23,4 +23,8 @@ struct Constants {
         case petCell = "PetCell"
         case filterCell = "FilterCell"
     }
+    
+    enum ColorsNames: String {
+        case cellBackgroundColor = "CellBackgroundColor"
+    }
 }
