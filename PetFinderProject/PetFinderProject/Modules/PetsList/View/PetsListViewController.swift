@@ -79,7 +79,7 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 120)
+        return CGSize(width: collectionView.bounds.width, height: Constants.CellHeights.petCell.rawValue)
     }
     
     

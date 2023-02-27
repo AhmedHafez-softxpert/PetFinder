@@ -27,4 +27,8 @@ struct Constants {
     enum ColorsNames: String {
         case cellBackgroundColor = "CellBackgroundColor"
     }
+    
+    enum CellHeights: Double {
+        case petCell = 110
+    }
 }

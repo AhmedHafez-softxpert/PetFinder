@@ -81,7 +81,6 @@ struct NetworkManager {
     
     
     static func getConfiguredUrl(filterIndex: Int, nextPageUrl: String?) -> String? {
-        // move to network manager
         var url: String = ""
 
         let filterValue = filterIndex == 0 ? "" : "type=\(Constants.petsFilters[filterIndex])"
