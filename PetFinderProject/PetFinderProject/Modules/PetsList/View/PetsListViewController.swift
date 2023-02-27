@@ -66,6 +66,7 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt \(indexPath.item)")
+        presenter?.didSelectCell(at: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -160,6 +161,7 @@ protocol PetsListOutput: AnyObject {
     func viewWillAppear()
     func didAddNewFilter(filter: String)
     func didReachedEndOfTable()
+    func didSelectCell(at index: Int)
 }
 
 protocol PetsListInput: AnyObject {

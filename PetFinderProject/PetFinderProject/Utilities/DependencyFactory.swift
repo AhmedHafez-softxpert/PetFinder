@@ -20,7 +20,8 @@ class DependencyFactory {
     
     func getPresenterForPetsListVC(vc: PetsListInput) -> PetsListPresenter {
         let interactor = PetsListInteractor()
-        let presenter = PetsListPresenter(view: vc, interactor: interactor)
+        let router = PetsListRouter()
+        let presenter = PetsListPresenter(view: vc, interactor: interactor, router: router)
         return presenter
     }
     

@@ -14,9 +14,12 @@ class PetsListPresenter {
     
     private var interactor: PetsListInteractor
     
-    init(view: PetsListInput, interactor: PetsListInteractor) {
+    private var router: PetsListRouter
+    
+    init(view: PetsListInput, interactor: PetsListInteractor, router: PetsListRouter) {
         self.view = view
         self.interactor = interactor
+        self.router = router
     }
     
     private func getAnimals() {
@@ -43,11 +46,14 @@ class PetsListPresenter {
 //MARK: -> PetsListOutput
 
 extension PetsListPresenter: PetsListOutput {
+
+    func didSelectCell(at index: Int) {
+        router.goToAnimalDetails()
+    }
     
     func didReachedEndOfTable() {
         getAnimals()
     }
-    
     
     func didAddNewFilter(filter: String) {
         print("filter from presenter class \(filter)")

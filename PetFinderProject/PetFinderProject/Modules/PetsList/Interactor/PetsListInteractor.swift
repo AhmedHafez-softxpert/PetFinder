@@ -20,8 +20,6 @@ class PetsListInteractor {
         NetworkManager.getAnimals(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
             completion(response)
         }
-        
-        
     }
     
     func configurePaginationVariables(response: AnimalsResponse?) {
