@@ -53,18 +53,18 @@ class PetsFilterViewController: UIViewController {
 //MARK: -> collection view methods
 extension PetsFilterViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        filters.count
+        Constants.petsFilters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCell", for: indexPath) as! FilterCell
-        let filter = filters[indexPath.row]
+        let filter = Constants.petsFilters[indexPath.row]
         cell.configure(filter: filter)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedFilter = filters[indexPath.item]
+        selectedFilter = Constants.petsFilters[indexPath.item]
         petsListVC?.selectedFilterIndex = indexPath.item
         petsListVC?.selectedFilter = selectedFilter
     }

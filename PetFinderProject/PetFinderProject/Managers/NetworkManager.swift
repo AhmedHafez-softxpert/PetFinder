@@ -28,15 +28,8 @@ struct NetworkManager {
             switch result {
             case .success(let json):
                 print("success part get token \(json)")
-                let newJson = json as? JSON ?? ["": ""]
-                let tokenModel: TokenModel? = TokenModel(json: newJson)
-                print("autj model will be printed \(tokenModel)")
-                if tokenModel != nil {
-                    AuthModel.accessToken = tokenModel?.access_token ?? ""
-                    completion(true)
-                } else {
-                    completion(false)
-                }
+                let resultHandlejson = handleGetTokenJsonResult(json: json)
+                completion(resultHandlejson)
                 
             case .failure(let error):
                 print("failure part get token \(error.localizedDescription)")
@@ -44,6 +37,18 @@ struct NetworkManager {
             }
         }
         
+    }
+    
+    static func handleGetTokenJsonResult(json: Any) -> Bool {
+        let newJson = json as? JSON ?? ["": ""]
+        let tokenModel: TokenModel? = TokenModel(json: newJson)
+        print("autj model will be printed \(tokenModel)")
+        if tokenModel != nil {
+            AuthModel.accessToken = tokenModel?.access_token ?? ""
+            return true
+        } else {
+            return false
+        }
     }
     
     static func getAnimals(url: String, completion: @escaping(_ response: AnimalsResponse?) -> Void) {

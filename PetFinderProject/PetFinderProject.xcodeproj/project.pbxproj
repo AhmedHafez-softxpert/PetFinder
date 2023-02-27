@@ -24,7 +24,6 @@
 		BB8712CE29A78FA600A339B1 /* PetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8712CC29A78FA600A339B1 /* PetCell.xib */; };
 		BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040529A4F1B200C3C912 /* AppDelegate.swift */; };
 		BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */; };
-		BBBA040A29A4F1B300C3C912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040929A4F1B300C3C912 /* ViewController.swift */; };
 		BBBA040D29A4F1B300C3C912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBA040B29A4F1B300C3C912 /* Main.storyboard */; };
 		BBBA040F29A4F1B500C3C912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBBA040E29A4F1B500C3C912 /* Assets.xcassets */; };
 		BBBA041229A4F1B500C3C912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBA041029A4F1B500C3C912 /* LaunchScreen.storyboard */; };
@@ -55,7 +54,6 @@
 		BBBA040229A4F1B200C3C912 /* PetFinderProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFinderProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBA040529A4F1B200C3C912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BBBA040929A4F1B300C3C912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBBA040C29A4F1B300C3C912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBBA040E29A4F1B500C3C912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBBA041129A4F1B500C3C912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				BBBA042A29A527AF00C3C912 /* Managers */,
 				BBBA040529A4F1B200C3C912 /* AppDelegate.swift */,
 				BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */,
-				BBBA040929A4F1B300C3C912 /* ViewController.swift */,
 				BBBA041B29A4F6A000C3C912 /* Modules */,
 				BBBA042229A4F8AC00C3C912 /* CustomViews */,
 				BBBA040B29A4F1B300C3C912 /* Main.storyboard */,
@@ -434,7 +431,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB4DBD0F29ACACDD00B07CCD /* HTTPStatusCode.swift in Sources */,
-				BBBA040A29A4F1B300C3C912 /* ViewController.swift in Sources */,
 				BBE402E029A6729300BD9779 /* TokenModel.swift in Sources */,
 				BB8712C729A7809500A339B1 /* PetsListViewController.swift in Sources */,
 				BB8712C129A77F7B00A339B1 /* PetsListPresenter.swift in Sources */,
