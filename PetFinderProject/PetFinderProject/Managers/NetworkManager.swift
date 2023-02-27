@@ -50,7 +50,6 @@ struct NetworkManager {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(AuthModel.accessToken)",
         ]
-//        let url = "https://api.petfinder.com/v2/animals?type=Horse"
         AF.request(url, method: .get, headers: headers).responseJSON { response in
             print("getAnimals response json \( response )")
             print("getAnimals status code will be printed \(response.response?.statusCode)")
@@ -58,26 +57,35 @@ struct NetworkManager {
             switch result {
             case .success(let json):
                 print("success part getAnimals \(json)")
-                let statusCode = response.response?.statusCode
-                switch statusCode {
-                case 200, 204 :
-                    print("getAnimals status code is 200")
-                    let animalsResponse = handleGetAnimalsSuccessCase(json: json)
-                    completion(animalsResponse)
-                case 401:
-                    print("getAnimals status code is 401")
-                    handleExpiredToken(url: url) { response in
-                        completion(response)
-                    }
-                default:
-                    print("default case switch ")
-                    completion(nil)
+                let statusCode = response.response?.statusCode ?? 0
+                let httpStatusCode = HTTPStatusCode(rawValue: statusCode)
+                handleAnimalsHttpUrlResponse(url: url, json: json, httPStatusCode: httpStatusCode) { response in
+                    completion(response)
                 }
             case .failure(let error):
                 print("failure part getAnimals \(error.localizedDescription)")
                 completion(nil)
             }
         }
+    }
+    
+    
+    static func handleAnimalsHttpUrlResponse(url: String, json: Any, httPStatusCode: HTTPStatusCode?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+        switch httPStatusCode {
+        case .ok:
+            print("getAnimals status code is 200")
+            let animalsResponse = handleGetAnimalsSuccessCase(json: json)
+            completion(animalsResponse)
+        case .unauthorized:
+            print("getAnimals status code is 401")
+            handleExpiredToken(url: url) { response in
+                completion(response)
+            }
+        default:
+            print("default case switch ")
+            completion(nil)
+        }
+
     }
     
     static func handleGetAnimalsSuccessCase(json: Any) -> AnimalsResponse? {
