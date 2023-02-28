@@ -19,10 +19,11 @@ class PetInfoCell: UICollectionViewCell {
         
     }
     
-    func configure(content: String) {
+    func configure(index: Int, animalViewModel: AnimalViewModel?) {
         // content configuration  will be edidted later
-        configureInfoContentLabel(content: content)
-        configureInfoTypeLabel(type: content)
+        configureInfoTypeLabel(index: index)
+        configureInfoContentLabel(index: index, animalViewModel: animalViewModel)
+       
     }
 
 }
@@ -31,12 +32,35 @@ class PetInfoCell: UICollectionViewCell {
 
 extension PetInfoCell {
     
-    private func configureInfoContentLabel(content: String) {
-        infoContentLabel.text = content
+    private func configureInfoContentLabel(index: Int, animalViewModel: AnimalViewModel?) {
+        switch index {
+        case 1:
+            infoContentLabel.text = animalViewModel?.name ?? "NA"
+        case 2:
+            infoContentLabel.text = animalViewModel?.size ?? "NA"
+        case 3:
+            infoContentLabel.text = animalViewModel?.primaryColor ?? "NA"
+        case 4:
+            infoContentLabel.text = animalViewModel?.address ?? "NA"
+        default:
+            infoContentLabel.text = "unknown"
+            
+        }
     }
     
-    private func configureInfoTypeLabel(type: String) {
-        infoTypeLabel.text = type
+    private func configureInfoTypeLabel(index: Int) {
+        switch index {
+        case 1:
+            infoTypeLabel.text = "Name"
+        case 2:
+            infoTypeLabel.text = "Size"
+        case 3:
+            infoTypeLabel.text = "Color"
+        case 4:
+            infoTypeLabel.text = "Address"
+        default:
+            infoTypeLabel.text = "unknown"
+        }
     }
     
 }

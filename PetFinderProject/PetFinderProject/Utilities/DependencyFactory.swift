@@ -25,7 +25,7 @@ class DependencyFactory {
         return presenter
     }
     
-    func getPresenterForPetDetailsVC(vc: PetDetailInput) -> PetDetailsPresenter {
+    func getPresenterForPetDetailsVC(vc: PetDetailsInput) -> PetDetailsPresenter {
         let router = PetDetailsRouter()
         let petDetailsPresenter = PetDetailsPresenter(view: vc, router: router)
         return petDetailsPresenter

@@ -48,7 +48,9 @@ class PetsListPresenter {
 extension PetsListPresenter: PetsListOutput {
 
     func didSelectCell(at index: Int) {
-        router.goToAnimalDetails()
+        let animalsViewModel = view.getCurrentAnimalsViewModel()
+        guard let selectedAnimal = animalsViewModel?.animals[index] else {return}
+        router.goToAnimalDetails(animalViewModel: selectedAnimal)
     }
     
     func didReachedEndOfTable() {

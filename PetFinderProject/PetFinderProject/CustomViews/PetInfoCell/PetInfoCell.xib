@@ -22,13 +22,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="298" height="49"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oe7-Ct-0Dk">
-                                <rect key="frame" x="5" y="14.999999999999998" width="42.666666666666664" height="19.333333333333329"/>
+                                <rect key="frame" x="5" y="14.999999999999998" width="50" height="19.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="X8a-qy-vfj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Sweetie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNc-JK-siC">
-                                <rect key="frame" x="57.666666666666671" y="14.999999999999998" width="230.33333333333331" height="19.333333333333329"/>
+                                <rect key="frame" x="65" y="14.999999999999998" width="223" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

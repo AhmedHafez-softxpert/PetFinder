@@ -11,17 +11,23 @@ class PetDetailsViewController: UIViewController {
 
     @IBOutlet weak var petDetailsCollectionView: UICollectionView!
     
+    
+    var presenter: PetDetailsOutput?
     var animalViewModel: AnimalViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-
+        initPresenter()
+        presenter?.viewDidLoad()
         
     }
     
 
     //MARK: - private methods
+    
+    private func initPresenter() {
+        presenter = DependencyFactory.shared.getPresenterForPetDetailsVC(vc: self)
+    }
     
     private func setupPetDetailsCollectionView() {
         petDetailsCollectionView.dataSource = self
@@ -45,11 +51,17 @@ extension PetDetailsViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petImageCell.rawValue, for: indexPath)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petImageCell.rawValue, for: indexPath) as? PetImageCell else {
+                return collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petImageCell.rawValue, for: indexPath)
+            }
+            let url = animalViewModel?.firstMediumPhotoUrl ?? ""
+            cell.configure(url: url)
             return cell
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petInfoCell.rawValue, for: indexPath)
-            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petInfoCell.rawValue, for: indexPath) as? PetInfoCell else {
+                return collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petInfoCell.rawValue, for: indexPath)
+            }
+            cell.configure(index: indexPath.row, animalViewModel: self.animalViewModel)
             return cell
         }
     }
@@ -69,7 +81,7 @@ extension PetDetailsViewController: UICollectionViewDataSource, UICollectionView
 
 //MARK: -> PetDetailInput
 
-extension PetDetailsViewController: PetDetailInput {
+extension PetDetailsViewController: PetDetailsInput {
     func setupUI() {
        setupPetDetailsCollectionView()
     }
@@ -84,6 +96,6 @@ protocol PetDetailsOutput: AnyObject {
     func didTapPetUrlButton()
 }
 
-protocol PetDetailInput: AnyObject {
+protocol PetDetailsInput: AnyObject {
     func setupUI() 
 }
