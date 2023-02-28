@@ -41,6 +41,7 @@
 		BBC7661429AE45310009AB87 /* PetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7661329AE45310009AB87 /* PetDetailsPresenter.swift */; };
 		BBC7661629AE45910009AB87 /* PetDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7661529AE45910009AB87 /* PetDetailsInteractor.swift */; };
 		BBC7661829AE45B30009AB87 /* PetDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7661729AE45B30009AB87 /* PetDetailsRouter.swift */; };
+		BBC7661B29AE5EAE0009AB87 /* PetListConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7661A29AE5EAE0009AB87 /* PetListConstants.swift */; };
 		BBE402E029A6729300BD9779 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402DF29A6729300BD9779 /* TokenModel.swift */; };
 		BBE402E829A6735400BD9779 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402E729A6735400BD9779 /* Animal.swift */; };
 		BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */; };
@@ -83,6 +84,7 @@
 		BBC7661329AE45310009AB87 /* PetDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsPresenter.swift; sourceTree = "<group>"; };
 		BBC7661529AE45910009AB87 /* PetDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsInteractor.swift; sourceTree = "<group>"; };
 		BBC7661729AE45B30009AB87 /* PetDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsRouter.swift; sourceTree = "<group>"; };
+		BBC7661A29AE5EAE0009AB87 /* PetListConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListConstants.swift; sourceTree = "<group>"; };
 		BBE402DF29A6729300BD9779 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		BBE402E729A6735400BD9779 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
@@ -336,9 +338,18 @@
 			path = PetInfoCell;
 			sourceTree = "<group>";
 		};
+		BBC7661929AE5E740009AB87 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BBC7661A29AE5EAE0009AB87 /* PetListConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		BBE402E129A672E800BD9779 /* PetsList */ = {
 			isa = PBXGroup;
 			children = (
+				BBC7661929AE5E740009AB87 /* Constants */,
 				BBE402E229A672FE00BD9779 /* View */,
 				BBE402E429A6730F00BD9779 /* Presenter */,
 				BBE402E329A6730500BD9779 /* Interactor */,
@@ -557,6 +568,7 @@
 				BBC7661629AE45910009AB87 /* PetDetailsInteractor.swift in Sources */,
 				BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */,
 				BBC7660129AE12020009AB87 /* PetDetailsViewController.swift in Sources */,
+				BBC7661B29AE5EAE0009AB87 /* PetListConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

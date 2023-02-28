@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func configureRootViewController() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let sb = UIStoryboard(name: "HomeScreen", bundle: nil)
-        let destVC = sb.instantiateViewController(withIdentifier: "SearchPetsNavigationController") as! UINavigationController
+        let sb = UIStoryboard(name: Constants.StoryboardNames.filterSB.rawValue, bundle: nil)
+        let destVC = sb.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.petsFilterNavigationController.rawValue) as! UINavigationController
         window!.rootViewController = destVC
         window!.makeKeyAndVisible()
     }

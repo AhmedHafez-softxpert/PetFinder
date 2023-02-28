@@ -11,12 +11,9 @@ import UIKit
 class PetsListRouter {
     
     func goToAnimalDetails(animalViewModel: AnimalViewModel?) {
-        // should take navigation controller and animal view model to pass it
-        print("goToAnimalDetails called from PetsListRouter")
         let currentNC = UIApplication.topViewController()?.navigationController
-        print("PetsListRouter currentVC \(currentNC)")
-        let sb = UIStoryboard(name: "PetDetails", bundle: nil)
-        let destVC = sb.instantiateViewController(withIdentifier: "PetDetailsViewController") as! PetDetailsViewController
+        let sb = UIStoryboard(name: Constants.StoryboardNames.petDetailsSB.rawValue, bundle: nil)
+        let destVC = sb.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.petDetailsVC.rawValue) as! PetDetailsViewController
         destVC.animalViewModel = animalViewModel
         currentNC?.pushViewController(destVC, animated: true)
 

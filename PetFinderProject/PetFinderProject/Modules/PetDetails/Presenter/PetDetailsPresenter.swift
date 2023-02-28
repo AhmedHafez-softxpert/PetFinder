@@ -21,7 +21,7 @@ class PetDetailsPresenter {
 
 //MARK: - PetDetailsOutput
 extension PetDetailsPresenter: PetDetailsOutput {
-
+ 
     func viewDidLoad() {
         view.setupUI()
     }

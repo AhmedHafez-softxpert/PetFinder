@@ -42,7 +42,7 @@ class PetsListViewController: UIViewController {
     private func setupPetsCollectionView() {
         petsCollectionView.dataSource = self
         petsCollectionView.delegate = self
-        petsCollectionView.register(UINib(nibName: Constants.FileName.petCell.rawValue, bundle: nil), forCellWithReuseIdentifier: Constants.FileName.petCell.rawValue)
+        petsCollectionView.register(UINib(nibName: PetListConstants.FileName.petCell.rawValue, bundle: nil), forCellWithReuseIdentifier: PetListConstants.FileName.petCell.rawValue)
     }
     
     
@@ -57,7 +57,7 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellName = Constants.FileName.petCell.rawValue
+        let cellName = PetListConstants.FileName.petCell.rawValue
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath) as? PetCell  else {
             return collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
         }
@@ -84,7 +84,7 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: Constants.CellHeights.petCell.rawValue)
+        return CGSize(width: collectionView.bounds.width, height: PetListConstants.petCellHeight)
     }
     
     

@@ -38,6 +38,6 @@ extension FilterCell {
     }
     
     private func configureContainerView(selected: Bool) {
-        containerView.backgroundColor = isSelected ? .cyan : UIColor(named: Constants.ColorsNames.cellBackgroundColor.rawValue)
+        containerView.backgroundColor = isSelected ? .cyan : UIColor(named: Constants.ColorName.cellBackgroundColor.rawValue)
     }
 }

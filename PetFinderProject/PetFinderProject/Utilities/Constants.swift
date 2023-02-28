@@ -5,7 +5,7 @@
 //  Created by SoftXpert on 2/21/23.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
     
@@ -26,11 +26,25 @@ struct Constants {
         case petImageCell = "PetImageCell"
     }
     
-    enum ColorsNames: String {
+    enum ColorName: String {
         case cellBackgroundColor = "CellBackgroundColor"
     }
     
     enum CellHeights: Double {
         case petCell = 110
     }
+    
+    enum StoryboardNames: String {
+        case filterSB = "HomeScreen"
+        case petsListSB = "PetsList"
+        case petDetailsSB = "PetDetails"
+    }
+    
+    enum ViewControllerIdentifier: String {
+        case petsListVC = "PetsListViewController"
+        case petsFilterVC = "PetsFilterViewController"
+        case petDetailsVC = "PetDetailsViewController"
+        case petsFilterNavigationController = "SearchPetsNavigationController"
+    }
+    
 }
