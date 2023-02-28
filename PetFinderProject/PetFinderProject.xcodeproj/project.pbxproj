@@ -31,6 +31,7 @@
 		BBBA041A29A4F37500C3C912 /* PetsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA041929A4F37500C3C912 /* PetsFilterViewController.swift */; };
 		BBBA042929A5107E00C3C912 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042829A5107E00C3C912 /* Constants.swift */; };
 		BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA042B29A527CA00C3C912 /* NetworkManager.swift */; };
+		BBC765FB29AE00C50009AB87 /* UIApplication+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC765FA29AE00C50009AB87 /* UIApplication+Ext.swift */; };
 		BBE402E029A6729300BD9779 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402DF29A6729300BD9779 /* TokenModel.swift */; };
 		BBE402E829A6735400BD9779 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402E729A6735400BD9779 /* Animal.swift */; };
 		BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */; };
@@ -63,6 +64,7 @@
 		BBBA041929A4F37500C3C912 /* PetsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsFilterViewController.swift; sourceTree = "<group>"; };
 		BBBA042829A5107E00C3C912 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BBBA042B29A527CA00C3C912 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BBC765FA29AE00C50009AB87 /* UIApplication+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Ext.swift"; sourceTree = "<group>"; };
 		BBE402DF29A6729300BD9779 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		BBE402E729A6735400BD9779 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		BBE402EA29A6768A00BD9779 /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4DBD1229ACE5D200B07CCD /* UIImageView+Ext.swift */,
+				BBC765FA29AE00C50009AB87 /* UIApplication+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				BB8712C329A77F8C00A339B1 /* PetsListInteractor.swift in Sources */,
 				BBE402E829A6735400BD9779 /* Animal.swift in Sources */,
 				BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */,
+				BBC765FB29AE00C50009AB87 /* UIApplication+Ext.swift in Sources */,
 				BB65BD7D29A659DF0063C858 /* PetsFilterPresenter.swift in Sources */,
 				BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */,
 				BB8712CD29A78FA600A339B1 /* PetCell.swift in Sources */,
