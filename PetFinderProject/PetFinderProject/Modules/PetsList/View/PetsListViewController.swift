@@ -31,11 +31,14 @@ class PetsListViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
-    func initPresenter() {
+    
+    
+    //MARK: - private methods
+    
+    private func initPresenter() {
         presenter = DependencyFactory.shared.getPresenterForPetsListVC(vc: self)
     }
     
-    //MARK: - private methods
     private func setupPetsCollectionView() {
         petsCollectionView.dataSource = self
         petsCollectionView.delegate = self
@@ -66,6 +69,7 @@ extension PetsListViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt \(indexPath.item)")
+        print("didSelectItemAt navigation Controller will be printed \(self.navigationController)")
         presenter?.didSelectCell(at: indexPath.row)
     }
     
