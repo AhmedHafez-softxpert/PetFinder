@@ -11,7 +11,6 @@ class PetInfoCell: UICollectionViewCell {
 
     
     @IBOutlet weak var infoContentLabel: UILabel!
-    
     @IBOutlet weak var infoTypeLabel: UILabel!
     
     

@@ -19,9 +19,11 @@ struct Constants {
     static let petsFilters: [String] = ["All", "Cat", "Horse", "Bird", "Rabbit"]
     
     
-    enum CellNames: String {
+    enum FileName: String {
         case petCell = "PetCell"
         case filterCell = "FilterCell"
+        case petInfoCell = "PetInfoCell"
+        case petImageCell = "PetImageCell"
     }
     
     enum ColorsNames: String {
