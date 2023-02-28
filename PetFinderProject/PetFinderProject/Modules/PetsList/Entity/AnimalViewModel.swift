@@ -24,7 +24,7 @@ struct AnimalViewModel {
         let firstSmallPhoto = (animal.photos?.count ?? 0) > 0 ? (animal.photos?[0].small ?? "") : ""
         let firstMediumPhoto = (animal.photos?.count ?? 0) > 0 ? (animal.photos?[0].medium ?? "") : ""
         let address = animal.contact?.address
-        let addressDetails = (address?.city ?? "") + (address?.state ?? "") + (address?.country ?? "")
+        let addressDetails = "\(address?.city ?? "") " + "\(address?.state ?? "") " + "\(address?.country ?? "")"
 
         self.name = animal.name ?? "NA"
         self.size = animal.size ?? "NA"

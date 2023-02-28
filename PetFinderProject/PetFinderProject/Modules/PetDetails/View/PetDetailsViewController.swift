@@ -22,6 +22,17 @@ class PetDetailsViewController: UIViewController {
         
     }
     
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        presenter?.didTabBackButton()
+    }
+    
+    
+    @IBAction func petUrlButtonPressed(_ sender: UIButton) {
+        presenter?.didTapPetUrlButton()
+    }
+    
+    
 
     //MARK: - private methods
     
@@ -32,7 +43,7 @@ class PetDetailsViewController: UIViewController {
     private func setupPetDetailsCollectionView() {
         petDetailsCollectionView.dataSource = self
         petDetailsCollectionView.delegate = self
-        // register
+        // register cells
         petDetailsCollectionView.register(UINib(nibName: Constants.FileName.petImageCell.rawValue, bundle: nil), forCellWithReuseIdentifier: Constants.FileName.petImageCell.rawValue)
         petDetailsCollectionView.register(UINib(nibName: Constants.FileName.petInfoCell.rawValue, bundle: nil), forCellWithReuseIdentifier: Constants.FileName.petInfoCell.rawValue)
     }
@@ -82,6 +93,10 @@ extension PetDetailsViewController: UICollectionViewDataSource, UICollectionView
 //MARK: -> PetDetailInput
 
 extension PetDetailsViewController: PetDetailsInput {
+    func getAnimalViewModel() -> AnimalViewModel? {
+        return animalViewModel
+    }
+    
     func setupUI() {
        setupPetDetailsCollectionView()
     }
@@ -94,8 +109,10 @@ extension PetDetailsViewController: PetDetailsInput {
 protocol PetDetailsOutput: AnyObject {
     func viewDidLoad()
     func didTapPetUrlButton()
+    func didTabBackButton()
 }
 
 protocol PetDetailsInput: AnyObject {
-    func setupUI() 
+    func setupUI()
+    func getAnimalViewModel() -> AnimalViewModel?
 }
