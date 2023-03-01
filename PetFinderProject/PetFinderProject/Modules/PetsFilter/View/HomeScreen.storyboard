@@ -60,7 +60,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh3-r0-T6A">
                                 <rect key="frame" x="0.0" y="169" width="393" height="649"/>
                                 <connections>
-                                    <segue destination="gYN-jp-41H" kind="embed" identifier="PetsFilterViewController" id="VYe-xy-4j4"/>
+                                    <segue destination="gYN-jp-41H" kind="embed" identifier="PetsListViewController" id="VYe-xy-4j4"/>
                                 </connections>
                             </containerView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAU-xl-J2C">

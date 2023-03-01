@@ -13,7 +13,6 @@ class PetsFilterViewController: UIViewController {
     @IBOutlet weak var petsFilterCollectionView: UICollectionView!
     
     var presenter: PetsFilterPresenter?
-    let filters: [String] = ["All", "Cat", "Horse", "Bird", "Rabbit"]
 
     var selectedFilter = ""
     var petsListVC: PetsListViewController?
@@ -26,7 +25,7 @@ class PetsFilterViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PetsFilterViewController" {
+        if segue.identifier == Constants.ViewControllerIdentifier.petsListVC.rawValue {
             petsListVC = segue.destination as! PetsListViewController
            
         }
@@ -35,7 +34,7 @@ class PetsFilterViewController: UIViewController {
     private func setupFilterCollectionView() {
         petsFilterCollectionView.dataSource = self
         petsFilterCollectionView.delegate = self
-        let cellName = Constants.FileName.filterCell.rawValue
+        let cellName = PetsFilterConstants.FileName.filterCell.rawValue
         petsFilterCollectionView.register(UINib(nibName: cellName, bundle: nil), forCellWithReuseIdentifier: cellName)
         
     }
@@ -58,7 +57,7 @@ extension PetsFilterViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellName = Constants.FileName.filterCell.rawValue
+        let cellName = PetsFilterConstants.FileName.filterCell.rawValue
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath) as! FilterCell
         let filter = Constants.petsFilters[indexPath.row]
         cell.configure(filter: filter)

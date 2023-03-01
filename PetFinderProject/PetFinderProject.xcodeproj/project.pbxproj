@@ -23,6 +23,7 @@
 		BB8712C929A784C400A339B1 /* PetsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712C829A784C400A339B1 /* PetsListRouter.swift */; };
 		BB8712CD29A78FA600A339B1 /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712CB29A78FA600A339B1 /* PetCell.swift */; };
 		BB8712CE29A78FA600A339B1 /* PetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8712CC29A78FA600A339B1 /* PetCell.xib */; };
+		BB918AA329AF3F1100CFE29A /* PetsFilterConstatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB918AA229AF3F1100CFE29A /* PetsFilterConstatnts.swift */; };
 		BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040529A4F1B200C3C912 /* AppDelegate.swift */; };
 		BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */; };
 		BBBA040D29A4F1B300C3C912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBA040B29A4F1B300C3C912 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		BB8712C829A784C400A339B1 /* PetsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsListRouter.swift; sourceTree = "<group>"; };
 		BB8712CB29A78FA600A339B1 /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
 		BB8712CC29A78FA600A339B1 /* PetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetCell.xib; sourceTree = "<group>"; };
+		BB918AA229AF3F1100CFE29A /* PetsFilterConstatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsFilterConstatnts.swift; sourceTree = "<group>"; };
 		BBBA040229A4F1B200C3C912 /* PetFinderProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFinderProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBA040529A4F1B200C3C912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 			path = PetCell;
 			sourceTree = "<group>";
 		};
+		BB918AA129AF3ED800CFE29A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BB918AA229AF3F1100CFE29A /* PetsFilterConstatnts.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		BBBA03F929A4F1B200C3C912 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +220,7 @@
 		BBBA041C29A4F6B200C3C912 /* PetsFilter */ = {
 			isa = PBXGroup;
 			children = (
+				BB918AA129AF3ED800CFE29A /* Constants */,
 				BBBA041D29A4F6BD00C3C912 /* View */,
 				BBBA041F29A4F74D00C3C912 /* Presenter */,
 				BBBA042129A4F76400C3C912 /* Router */,
@@ -566,6 +577,7 @@
 				BB8712C929A784C400A339B1 /* PetsListRouter.swift in Sources */,
 				BB31A3F429A7A22C006FA3E4 /* AnimalViewModel.swift in Sources */,
 				BBC7661629AE45910009AB87 /* PetDetailsInteractor.swift in Sources */,
+				BB918AA329AF3F1100CFE29A /* PetsFilterConstatnts.swift in Sources */,
 				BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */,
 				BBC7660129AE12020009AB87 /* PetDetailsViewController.swift in Sources */,
 				BBC7661B29AE5EAE0009AB87 /* PetListConstants.swift in Sources */,
