@@ -9,4 +9,5 @@ target 'PetFinderProject' do
 pod 'Alamofire'
 pod 'Gloss', '~> 3.2'
 pod 'SDWebImage', '~> 5.0'
+pod 'KeychainSwift'
 end

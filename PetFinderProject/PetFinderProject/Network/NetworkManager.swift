@@ -44,7 +44,7 @@ struct NetworkManager {
         let tokenModel: TokenModel? = TokenModel(json: newJson)
         print("autj model will be printed \(tokenModel)")
         if tokenModel != nil {
-            AuthModel.accessToken = tokenModel?.access_token ?? ""
+            KeychainServices.shared.saveValue(value: tokenModel?.access_token ?? "", valueType: .accessToken)
             return true
         } else {
             return false
@@ -52,8 +52,9 @@ struct NetworkManager {
     }
     
     static func getAnimals(filterIndex: Int, nextPageUrl: String?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+        let accessToken = KeychainServices.shared.getStoredData(ofType: .accessToken) ?? ""
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(AuthModel.accessToken)",
+            "Authorization": "Bearer \(accessToken)",
         ]
         guard let url = getConfiguredUrl(filterIndex: filterIndex, nextPageUrl: nextPageUrl) else {
             completion(nil)

@@ -18,6 +18,3 @@ struct TokenModel: Codable {
     
 }
 
-struct AuthModel {
-    static var accessToken: String = ""
-}

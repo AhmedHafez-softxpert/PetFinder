@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.6.4)
   - Gloss (3.2.1)
+  - KeychainSwift (20.0.0)
   - SDWebImage (5.15.4):
     - SDWebImage/Core (= 5.15.4)
   - SDWebImage/Core (5.15.4)
@@ -8,19 +9,22 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Gloss (~> 3.2)
+  - KeychainSwift
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Gloss
+    - KeychainSwift
     - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Gloss: 2cda64dd31f12d8c7905273c7883c63ee92bfee3
+  KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
   SDWebImage: 1c39de67663e5eebb2f41324d5d580eeea12dd4c
 
-PODFILE CHECKSUM: 525e92152e689355312f6376776ab60d334d4c69
+PODFILE CHECKSUM: 2599d7d73593141852e647fd1bf41dadbb887d40
 
 COCOAPODS: 1.11.3

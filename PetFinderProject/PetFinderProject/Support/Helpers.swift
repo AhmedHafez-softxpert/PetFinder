@@ -10,10 +10,6 @@ import Alamofire
 
 struct Helpers {
     
-    static func isTokenEmpty() -> Bool {
-        return AuthModel.accessToken == ""
-    }
-    
     static func isConnectedToNetwork() -> Bool {
         if NetworkReachabilityManager.default?.isReachable == true {
             return true
