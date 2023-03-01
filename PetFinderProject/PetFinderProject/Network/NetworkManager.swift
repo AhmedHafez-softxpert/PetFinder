@@ -78,6 +78,40 @@ struct NetworkManager {
     }
     
     
+    static func getNetworkRequestInputForGetAnimals(filterIndex: Int, nextPageUrl: String?) -> NetworkRequestInput? {
+        let accessToken = KeychainServices.shared.getStoredData(ofType: .accessToken) ?? ""
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(accessToken)",
+        ]
+        guard let url = getConfiguredUrl(filterIndex: filterIndex, nextPageUrl: nextPageUrl) else { return nil }
+        let requestInput = NetworkRequestInput(url: url, method: .get, headers: headers)
+        return requestInput
+    }
+    
+    static func getAnimals2(filterIndex: Int, nextPageUrl: String?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+        guard let requestInput = getNetworkRequestInputForGetAnimals(filterIndex: filterIndex, nextPageUrl: nextPageUrl) else {
+            print("requestInput is nil")
+            completion(nil)
+            return
+        }
+        NetworkModule.shared.getData(requestInput: requestInput) { response in
+            switch response.statusCode {
+            case .ok:
+                let json = response.json
+                let animalsResponse = handleGetAnimalsSuccessCase(json: json)
+                completion(animalsResponse)
+            case .unauthorized:
+                handleExpiredToken(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
+                    completion(response)
+                }
+            default:
+                print("default case switch getAnimals2")
+                completion(nil)
+            }
+        }
+    }
+    
+    
     static func getConfiguredUrl(filterIndex: Int, nextPageUrl: String?) -> String? {
         var url: String = ""
 
@@ -111,7 +145,25 @@ struct NetworkManager {
 
     }
     
-    static func handleGetAnimalsSuccessCase(json: Any) -> AnimalsResponse? {
+    static func handleAnimalsHttpUrlResponse2(filterIndex: Int, nextPageUrl: String?, json: Any, httPStatusCode: HTTPStatusCode?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+        switch httPStatusCode {
+        case .ok:
+            print("getAnimals status code is 200")
+            let animalsResponse = handleGetAnimalsSuccessCase(json: json)
+            completion(animalsResponse)
+        case .unauthorized:
+            print("getAnimals status code is 401")
+            handleExpiredToken(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
+                completion(response)
+            }
+        default:
+            print("default case switch ")
+            completion(nil)
+        }
+
+    }
+    
+    static func handleGetAnimalsSuccessCase(json: Any?) -> AnimalsResponse? {
         let newJson = json as? JSON ?? ["": ""]
         print("handleGetAnimalsSuccessCase \(newJson)")
         let animalsResponse: AnimalsResponse? = AnimalsResponse(json: newJson)
@@ -122,7 +174,7 @@ struct NetworkManager {
     static func handleExpiredToken(filterIndex: Int , nextPageUrl: String?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
         NetworkManager.getToken { success in
             if success {
-                getAnimals(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
+                getAnimals2(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
                     completion(response)
                 }
             } else {

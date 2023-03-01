@@ -17,7 +17,7 @@ class PetsListInteractor {
     
     
     func getAnimals(filterIndex: Int, nextPageUrl: String?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
-        NetworkManager.getAnimals(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
+        NetworkManager.getAnimals2(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
             completion(response)
         }
     }

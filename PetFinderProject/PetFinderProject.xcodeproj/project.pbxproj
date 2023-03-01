@@ -10,6 +10,7 @@
 		8CCCDBD22ED37235303BE79E /* Pods_PetFinderProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */; };
 		BB25973929AF5849006394CD /* KeychainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB25973829AF5849006394CD /* KeychainServices.swift */; };
 		BB25973C29AF6D41006394CD /* PetDetailsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB25973B29AF6D41006394CD /* PetDetailsConstants.swift */; };
+		BB25973E29AF9702006394CD /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB25973D29AF9702006394CD /* NetworkModule.swift */; };
 		BB31A3F429A7A22C006FA3E4 /* AnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31A3F329A7A22B006FA3E4 /* AnimalViewModel.swift */; };
 		BB4DBD0F29ACACDD00B07CCD /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4DBD0E29ACACDD00B07CCD /* HTTPStatusCode.swift */; };
 		BB4DBD1329ACE5D200B07CCD /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4DBD1229ACE5D200B07CCD /* UIImageView+Ext.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		BB25973829AF5849006394CD /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
 		BB25973B29AF6D41006394CD /* PetDetailsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsConstants.swift; sourceTree = "<group>"; };
+		BB25973D29AF9702006394CD /* NetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
 		BB31A3F329A7A22B006FA3E4 /* AnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewModel.swift; sourceTree = "<group>"; };
 		BB4DBD0E29ACACDD00B07CCD /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		BB4DBD1229ACE5D200B07CCD /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				BBBA042B29A527CA00C3C912 /* NetworkManager.swift */,
 				BB4DBD0E29ACACDD00B07CCD /* HTTPStatusCode.swift */,
+				BB25973D29AF9702006394CD /* NetworkModule.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				BB918AA329AF3F1100CFE29A /* PetsFilterConstatnts.swift in Sources */,
 				BBE402EB29A6768A00BD9779 /* DependencyFactory.swift in Sources */,
 				BBC7660129AE12020009AB87 /* PetDetailsViewController.swift in Sources */,
+				BB25973E29AF9702006394CD /* NetworkModule.swift in Sources */,
 				BBC7661B29AE5EAE0009AB87 /* PetListConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
