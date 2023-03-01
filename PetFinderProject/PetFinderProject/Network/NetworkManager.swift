@@ -94,19 +94,9 @@ struct NetworkManager {
             completion(nil)
             return
         }
-        NetworkModule.shared.getData(requestInput: requestInput) { response in
-            switch response.statusCode {
-            case .ok:
-                let json = response.json
-                let animalsResponse = handleGetAnimalsSuccessCase(json: json)
-                completion(animalsResponse)
-            case .unauthorized:
-                handleExpiredToken(filterIndex: filterIndex, nextPageUrl: nextPageUrl) { response in
-                    completion(response)
-                }
-            default:
-                print("default case switch getAnimals2")
-                completion(nil)
+        NetworkModule.shared.getData(requestInput: requestInput) { responseData in
+            handleAnimalsHttpUrlResponse2(filterIndex: filterIndex, nextPageUrl: nextPageUrl, networkResponse: responseData) { response in
+                completion(response)
             }
         }
     }
@@ -145,11 +135,11 @@ struct NetworkManager {
 
     }
     
-    static func handleAnimalsHttpUrlResponse2(filterIndex: Int, nextPageUrl: String?, json: Any, httPStatusCode: HTTPStatusCode?, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
-        switch httPStatusCode {
+    static func handleAnimalsHttpUrlResponse2(filterIndex: Int, nextPageUrl: String?, networkResponse: NetworkResponseData, completion: @escaping(_ response: AnimalsResponse?) -> Void) {
+        switch networkResponse.statusCode {
         case .ok:
             print("getAnimals status code is 200")
-            let animalsResponse = handleGetAnimalsSuccessCase(json: json)
+            let animalsResponse = handleGetAnimalsSuccessCase(json: networkResponse.json)
             completion(animalsResponse)
         case .unauthorized:
             print("getAnimals status code is 401")

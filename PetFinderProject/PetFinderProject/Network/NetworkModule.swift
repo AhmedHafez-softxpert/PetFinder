@@ -29,18 +29,20 @@ class NetworkModule {
     
     static let shared = NetworkModule()
     
-    func getData(requestInput: NetworkRequestInput, completion: @escaping(_ response: (statusCode: HTTPStatusCode? , json: Any?, error: AFError?)) -> Void) {
+    func getData(requestInput: NetworkRequestInput, completion: @escaping(_ response: NetworkResponseData) -> Void) {
         AF.request(requestInput.url, method: requestInput.method ?? .get, parameters: requestInput.parameters, headers: requestInput.headers).responseJSON { response in
             let result = response.result
             let statusCode = response.response?.statusCode ?? 0
             let httpStatusCode = HTTPStatusCode(rawValue: statusCode)
             switch result {
             case .success(let json):
-                completion((httpStatusCode, json, nil))
+                let responseData = NetworkResponseData(statusCode: httpStatusCode, json: json, error: nil)
+                completion(responseData)
                 
             case .failure(let error):
                 print("")
-                completion((httpStatusCode, nil, error))
+                let responseData = NetworkResponseData(statusCode: httpStatusCode, json: nil, error: error)
+                completion(responseData)
             }
             
         }
