@@ -50,7 +50,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vsZ-wf-VMk">
-                                <rect key="frame" x="0.0" y="119" width="393" height="629"/>
+                                <rect key="frame" x="0.0" y="119" width="393" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="43P-xv-YV2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -82,7 +82,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vW3-F4-mzn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1bC-66-cxT"/>
-                            <constraint firstItem="5Uy-Ba-XCY" firstAttribute="top" secondItem="vsZ-wf-VMk" secondAttribute="bottom" constant="10" id="2D2-C9-cSZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vW3-F4-mzn" secondAttribute="trailing" id="8lK-fQ-W8N"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vsZ-wf-VMk" secondAttribute="trailing" id="DIF-Sh-ECw"/>
                             <constraint firstItem="vsZ-wf-VMk" firstAttribute="top" secondItem="vW3-F4-mzn" secondAttribute="bottom" id="HAX-oQ-3gU"/>
@@ -90,6 +89,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5Uy-Ba-XCY" secondAttribute="bottom" constant="10" id="Phe-hG-HKn"/>
                             <constraint firstItem="5Uy-Ba-XCY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="XKV-ZS-H3n"/>
                             <constraint firstItem="vW3-F4-mzn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ffm-Rc-3Ib"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vsZ-wf-VMk" secondAttribute="bottom" id="gO7-Va-gIb"/>
                             <constraint firstItem="vsZ-wf-VMk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jH5-db-tuR"/>
                         </constraints>
                     </view>

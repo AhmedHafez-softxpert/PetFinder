@@ -43,9 +43,11 @@ class PetDetailsViewController: UIViewController {
     private func setupPetDetailsCollectionView() {
         petDetailsCollectionView.dataSource = self
         petDetailsCollectionView.delegate = self
+        
+        petDetailsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
         // register cells
-        petDetailsCollectionView.register(UINib(nibName: Constants.FileName.petImageCell.rawValue, bundle: nil), forCellWithReuseIdentifier: Constants.FileName.petImageCell.rawValue)
-        petDetailsCollectionView.register(UINib(nibName: Constants.FileName.petInfoCell.rawValue, bundle: nil), forCellWithReuseIdentifier: Constants.FileName.petInfoCell.rawValue)
+        petDetailsCollectionView.register(UINib(nibName: PetDetailsConstants.FileName.petImageCell.rawValue, bundle: nil), forCellWithReuseIdentifier: PetDetailsConstants.FileName.petImageCell.rawValue)
+        petDetailsCollectionView.register(UINib(nibName: PetDetailsConstants.FileName.petInfoCell.rawValue, bundle: nil), forCellWithReuseIdentifier: PetDetailsConstants.FileName.petInfoCell.rawValue)
     }
     
 
@@ -62,15 +64,15 @@ extension PetDetailsViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row {
         case 0:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petImageCell.rawValue, for: indexPath) as? PetImageCell else {
-                return collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petImageCell.rawValue, for: indexPath)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetDetailsConstants.FileName.petImageCell.rawValue, for: indexPath) as? PetImageCell else {
+                return collectionView.dequeueReusableCell(withReuseIdentifier: PetDetailsConstants.FileName.petImageCell.rawValue, for: indexPath)
             }
             let url = animalViewModel?.firstMediumPhotoUrl ?? ""
             cell.configure(url: url)
             return cell
         default:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petInfoCell.rawValue, for: indexPath) as? PetInfoCell else {
-                return collectionView.dequeueReusableCell(withReuseIdentifier: Constants.FileName.petInfoCell.rawValue, for: indexPath)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetDetailsConstants.FileName.petInfoCell.rawValue, for: indexPath) as? PetInfoCell else {
+                return collectionView.dequeueReusableCell(withReuseIdentifier: PetDetailsConstants.FileName.petInfoCell.rawValue, for: indexPath)
             }
             cell.configure(index: indexPath.row, animalViewModel: self.animalViewModel)
             return cell
@@ -80,9 +82,9 @@ extension PetDetailsViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.row {
         case 0:
-            return CGSize(width: collectionView.frame.width, height: 300)
+            return CGSize(width: collectionView.frame.width, height: PetDetailsConstants.CellHeight.petImageCell.rawValue)
         default:
-            return CGSize(width: collectionView.frame.width, height: 40)
+            return CGSize(width: collectionView.frame.width, height: PetDetailsConstants.CellHeight.petInfoCell.rawValue)
         }
     }
     

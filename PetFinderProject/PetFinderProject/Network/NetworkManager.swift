@@ -12,17 +12,14 @@ import Gloss
 
 struct NetworkManager {
     
-    
     static func getToken(completion: @escaping(_ success: Bool) -> Void) {
         let parameters: [String: Any] = [
-            "grant_type": "client_credentials",
+            "grant_type": Constants.authApiGrantType,
             "client_id": "\(Constants.apiKey)",
             "client_secret": "\(Constants.secretKey)"
         ]
-        
-        let authUrl = "https://api.petfinder.com/v2/oauth2/token"
-        
-        AF.request(authUrl, method: .post, parameters: parameters).responseJSON { response in
+    
+        AF.request(Constants.authUrl, method: .post, parameters: parameters).responseJSON { response in
             print("response json \( response )")
             let result = response.result
             switch result {
@@ -84,7 +81,7 @@ struct NetworkManager {
     static func getConfiguredUrl(filterIndex: Int, nextPageUrl: String?) -> String? {
         var url: String = ""
 
-        let filterValue = filterIndex == 0 ? "" : "type=\(Constants.petsFilters[filterIndex])"
+        let filterValue = filterIndex == 0 ? "" : "type=\(PetsFilterConstants.filters[filterIndex])"
         if nextPageUrl == nil {
            url = Constants.baseUrl + filterValue
             return url

@@ -11,27 +11,16 @@ struct Constants {
     
     static let apiKey = "OO076NFHirXwzkqwwO38rXaj8JjF6Jh5OrAySvmhSmgkUmiwkV"
     static let secretKey = "zPV0JgaIoIQ57RauCP2t6DewQ3uQYW02hT9iZrkF"
+    static let authApiGrantType = "client_credentials"
     
     
+    static let authUrl = "https://api.petfinder.com/v2/oauth2/token"
     static let baseUrl = "https://api.petfinder.com/v2/animals?"
     static let baseUrlForPagination = "https://api.petfinder.com"
-    
-    static let petsFilters: [String] = ["All", "Cat", "Horse", "Bird", "Rabbit"]
-    
-    
-    enum FileName: String {
-        case petCell = "PetCell"
-        case filterCell = "FilterCell"
-        case petInfoCell = "PetInfoCell"
-        case petImageCell = "PetImageCell"
-    }
+        
     
     enum ColorName: String {
         case cellBackgroundColor = "CellBackgroundColor"
-    }
-    
-    enum CellHeights: Double {
-        case petCell = 110
     }
     
     enum StoryboardNames: String {

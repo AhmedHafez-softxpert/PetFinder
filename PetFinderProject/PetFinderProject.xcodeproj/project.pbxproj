@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8CCCDBD22ED37235303BE79E /* Pods_PetFinderProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC40CD332ED51B5E9742E033 /* Pods_PetFinderProject.framework */; };
 		BB25973929AF5849006394CD /* KeychainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB25973829AF5849006394CD /* KeychainServices.swift */; };
+		BB25973C29AF6D41006394CD /* PetDetailsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB25973B29AF6D41006394CD /* PetDetailsConstants.swift */; };
 		BB31A3F429A7A22C006FA3E4 /* AnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31A3F329A7A22B006FA3E4 /* AnimalViewModel.swift */; };
 		BB4DBD0F29ACACDD00B07CCD /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4DBD0E29ACACDD00B07CCD /* HTTPStatusCode.swift */; };
 		BB4DBD1329ACE5D200B07CCD /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4DBD1229ACE5D200B07CCD /* UIImageView+Ext.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		BB25973829AF5849006394CD /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
+		BB25973B29AF6D41006394CD /* PetDetailsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsConstants.swift; sourceTree = "<group>"; };
 		BB31A3F329A7A22B006FA3E4 /* AnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewModel.swift; sourceTree = "<group>"; };
 		BB4DBD0E29ACACDD00B07CCD /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		BB4DBD1229ACE5D200B07CCD /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 				DC60C6F8CFF8917571A6541C /* Pods-PetFinderProject.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BB25973A29AF6D22006394CD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BB25973B29AF6D41006394CD /* PetDetailsConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		BB4DBD0D29ACACC300B07CCD /* Support */ = {
@@ -296,6 +306,7 @@
 				BBC7660229AE12C40009AB87 /* Presenter */,
 				BBC7660329AE12D00009AB87 /* Interactor */,
 				BBC7660429AE12E40009AB87 /* Router */,
+				BB25973A29AF6D22006394CD /* Constants */,
 			);
 			path = PetDetails;
 			sourceTree = "<group>";
@@ -565,6 +576,7 @@
 				BB25973929AF5849006394CD /* KeychainServices.swift in Sources */,
 				BB65BD7B29A620670063C858 /* Helpers.swift in Sources */,
 				BB8712C329A77F8C00A339B1 /* PetsListInteractor.swift in Sources */,
+				BB25973C29AF6D41006394CD /* PetDetailsConstants.swift in Sources */,
 				BBE402E829A6735400BD9779 /* Animal.swift in Sources */,
 				BBC7661129AE37410009AB87 /* PetInfoCell.swift in Sources */,
 				BBC7660C29AE30DB0009AB87 /* PetImageCell.swift in Sources */,
