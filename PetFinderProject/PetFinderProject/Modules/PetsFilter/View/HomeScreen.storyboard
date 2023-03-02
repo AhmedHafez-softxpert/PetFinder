@@ -59,9 +59,6 @@
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh3-r0-T6A">
                                 <rect key="frame" x="0.0" y="169" width="393" height="649"/>
-                                <connections>
-                                    <segue destination="gYN-jp-41H" kind="embed" identifier="PetsListViewController" id="VYe-xy-4j4"/>
-                                </connections>
                             </containerView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAU-xl-J2C">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -104,19 +101,12 @@
                     <connections>
                         <outlet property="loadingView" destination="bAU-xl-J2C" id="5j9-Ba-Ihp"/>
                         <outlet property="petsFilterCollectionView" destination="Psd-JN-VAc" id="AAT-sv-bq5"/>
+                        <outlet property="petsListContainerView" destination="nh3-r0-T6A" id="z9T-Uk-iz2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rg6-XA-BLQ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="959.5419847328244" y="-27.464788732394368"/>
-        </scene>
-        <!--PetsList-->
-        <scene sceneID="nfr-Z7-oX6">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PetsListViewController" storyboardName="PetsList" id="gYN-jp-41H" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2eP-dJ-kmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1890" y="8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dQs-HX-7US">

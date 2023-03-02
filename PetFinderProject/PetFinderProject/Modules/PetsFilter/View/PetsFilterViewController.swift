@@ -9,6 +9,8 @@ import UIKit
 
 class PetsFilterViewController: UIViewController {
     
+    @IBOutlet weak var petsListContainerView: UIView!
+    
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var petsFilterCollectionView: UICollectionView!
     
@@ -24,13 +26,6 @@ class PetsFilterViewController: UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.ViewControllerIdentifier.petsListVC.rawValue {
-            petsListVC = segue.destination as! PetsListViewController
-           
-        }
-    }
-    
     private func setupFilterCollectionView() {
         petsFilterCollectionView.dataSource = self
         petsFilterCollectionView.delegate = self
@@ -40,11 +35,33 @@ class PetsFilterViewController: UIViewController {
     }
     
     func showLoadingView() {
+        print("show loadinf view called vc")
         loadingView.isHidden = false
     }
     
     func hideLoadingView() {
         loadingView.isHidden = true
+    }
+    
+    private func addPetsListAsChild() {
+        let sb = UIStoryboard(name: Constants.StoryboardNames.petsListSB.rawValue, bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.petsListVC.rawValue) as! PetsListViewController
+        addChild(vc)
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+        petsListContainerView.addSubview(vc.view)
+        
+        NSLayoutConstraint.activate([
+            vc.view.leadingAnchor.constraint(equalTo: petsListContainerView.leadingAnchor),
+            vc.view.trailingAnchor.constraint(equalTo: petsListContainerView.trailingAnchor),
+            vc.view.topAnchor.constraint(equalTo: petsListContainerView.topAnchor),
+            vc.view.bottomAnchor.constraint(equalTo: petsListContainerView.bottomAnchor)
+        ])
+        
+        vc.didMove(toParent: self)
+        
+        petsListVC = vc
+        
+        
     }
 
 }
@@ -80,6 +97,7 @@ extension PetsFilterViewController: PetsFilterInput {
     func initUISetup() {
         print("initUISetup called vc")
         setupFilterCollectionView()
+        addPetsListAsChild()
     }
 
 

@@ -39,4 +39,9 @@ extension UIApplication {
         }
         return children
     }
+    
+    class func getViewController<T>(from parent: UIViewController,type: T.Type) -> UIViewController? {
+        let child = parent.children.filter({$0 is T}).last
+        return child
+    }
 }
