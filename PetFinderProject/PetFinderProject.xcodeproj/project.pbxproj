@@ -27,6 +27,7 @@
 		BB8712CD29A78FA600A339B1 /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8712CB29A78FA600A339B1 /* PetCell.swift */; };
 		BB8712CE29A78FA600A339B1 /* PetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8712CC29A78FA600A339B1 /* PetCell.xib */; };
 		BB918AA329AF3F1100CFE29A /* PetsFilterConstatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB918AA229AF3F1100CFE29A /* PetsFilterConstatnts.swift */; };
+		BB92409129B0F3D10050E3D7 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB92409029B0F3D10050E3D7 /* UIViewController+Ext.swift */; };
 		BBBA040629A4F1B200C3C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040529A4F1B200C3C912 /* AppDelegate.swift */; };
 		BBBA040829A4F1B200C3C912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */; };
 		BBBA040D29A4F1B300C3C912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBA040B29A4F1B300C3C912 /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 		BB8712CB29A78FA600A339B1 /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
 		BB8712CC29A78FA600A339B1 /* PetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetCell.xib; sourceTree = "<group>"; };
 		BB918AA229AF3F1100CFE29A /* PetsFilterConstatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsFilterConstatnts.swift; sourceTree = "<group>"; };
+		BB92409029B0F3D10050E3D7 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		BBBA040229A4F1B200C3C912 /* PetFinderProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFinderProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBA040529A4F1B200C3C912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBBA040729A4F1B200C3C912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				BB4DBD1229ACE5D200B07CCD /* UIImageView+Ext.swift */,
 				BBC765FA29AE00C50009AB87 /* UIApplication+Ext.swift */,
+				BB92409029B0F3D10050E3D7 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				BBE402E829A6735400BD9779 /* Animal.swift in Sources */,
 				BBC7661129AE37410009AB87 /* PetInfoCell.swift in Sources */,
 				BBC7660C29AE30DB0009AB87 /* PetImageCell.swift in Sources */,
+				BB92409129B0F3D10050E3D7 /* UIViewController+Ext.swift in Sources */,
 				BBBA042C29A527CA00C3C912 /* NetworkManager.swift in Sources */,
 				BBC765FB29AE00C50009AB87 /* UIApplication+Ext.swift in Sources */,
 				BB65BD7D29A659DF0063C858 /* PetsFilterPresenter.swift in Sources */,

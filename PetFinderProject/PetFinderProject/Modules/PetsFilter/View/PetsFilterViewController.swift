@@ -46,22 +46,8 @@ class PetsFilterViewController: UIViewController {
     private func addPetsListAsChild() {
         let sb = UIStoryboard(name: Constants.StoryboardNames.petsListSB.rawValue, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.petsListVC.rawValue) as! PetsListViewController
-        addChild(vc)
-        vc.view.translatesAutoresizingMaskIntoConstraints = false
-        petsListContainerView.addSubview(vc.view)
-        
-        NSLayoutConstraint.activate([
-            vc.view.leadingAnchor.constraint(equalTo: petsListContainerView.leadingAnchor),
-            vc.view.trailingAnchor.constraint(equalTo: petsListContainerView.trailingAnchor),
-            vc.view.topAnchor.constraint(equalTo: petsListContainerView.topAnchor),
-            vc.view.bottomAnchor.constraint(equalTo: petsListContainerView.bottomAnchor)
-        ])
-        
-        vc.didMove(toParent: self)
-        
+        self.add(childViewController: vc, to: petsListContainerView)
         petsListVC = vc
-        
-        
     }
 
 }
