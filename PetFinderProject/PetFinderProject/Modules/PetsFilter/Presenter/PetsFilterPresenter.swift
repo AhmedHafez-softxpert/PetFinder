@@ -21,13 +21,6 @@ class PetsFilterPresenter {
         self.interactor = interactor
     }
     
-    func onViewDidLoad() {
-        view?.initUISetup()
-        print(" SearchPetsPresenter interactor will be printed  \(interactor)")
-        interactor?.testImplementation()
-    }
-    
-    
 }
 //MARK: - PetsFilterOutput
 
