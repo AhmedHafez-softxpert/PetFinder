@@ -12,7 +12,7 @@ class PetsFilterViewController: UIViewController {
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var petsFilterCollectionView: UICollectionView!
     
-    var presenter: PetsFilterPresenter?
+    var presenter: PetsFilterOutput?
 
     var selectedFilter = ""
     var petsListVC: PetsListViewController?
@@ -20,7 +20,7 @@ class PetsFilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = DependencyFactory.shared.getPresenterForPetsFilterVC(vc: self)
-        presenter?.onViewDidLoad()
+        presenter?.viewDidLoad()
         
     }
     
@@ -76,11 +76,21 @@ extension PetsFilterViewController: UICollectionViewDataSource, UICollectionView
 
 
 //MARK: -> SearchPetsPresenterToView
-extension PetsFilterViewController: PetsFilterPresenterToView {
+extension PetsFilterViewController: PetsFilterInput {
     func initUISetup() {
         print("initUISetup called vc")
         setupFilterCollectionView()
     }
 
 
+}
+
+//MARK: - viper prtocols
+
+protocol PetsFilterInput: AnyObject {
+    func initUISetup()
+}
+
+protocol PetsFilterOutput: AnyObject {
+    func viewDidLoad()
 }
